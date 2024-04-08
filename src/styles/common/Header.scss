@@ -7,6 +7,11 @@
     backdrop-filter: saturate(180%) blur(90px);
     /* background-image: linear-gradient(180deg, rgba(199, 199, 199, 0.5), rgba(203, 203, 203, 0.5)); */
     background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+    transition: all 0.5s;
+}
+
+.header_wrap.closed {
+    transform: translateY(-100%);
 }
 
 .header_inner {
@@ -17,6 +22,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 
 .header_title {
     font: bold 2rem "Titillium Web", sans-serif;
