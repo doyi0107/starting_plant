@@ -21,7 +21,7 @@ function App() {
         scrub: true,
         markers: false,
       },
-      x: "-300px",
+      x: "-330px",
       ease: "power1.inOut", // 애니메이션 효과 조절
     });
 
