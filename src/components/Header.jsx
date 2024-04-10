@@ -32,7 +32,7 @@ export default function Header() {
       <div className={`header_wrap ${isClosed ? "closed" : ""}`}>
         <div className="header_inner">
           <div className="header_title_wrap">
-            <p className="header_title">starting plant</p>
+            <p className="header_title">STARTING PLANT</p>
           </div>
           {/* <p className="header_main">식물 추천</p> */}
           <form className="header_seach_bar">
