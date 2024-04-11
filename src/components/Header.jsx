@@ -1,5 +1,6 @@
 import React, { useState, useEffect }from "react";
 import "../styles/common/all.css";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   // 스크롤 위치를 저장하기 위한 상태
@@ -32,7 +33,9 @@ export default function Header() {
       <div className={`header_wrap ${isClosed ? "closed" : ""}`}>
         <div className="header_inner">
           <div className="header_title_wrap">
-            <p className="header_title">STARTING PLANT</p>
+            <Link to="/" className="header_title">
+              STARTING PLANT
+            </Link>
           </div>
           {/* <p className="header_main">식물 추천</p> */}
           <form className="header_seach_bar">

@@ -1,0 +1,267 @@
+/* 글씨 컬러 dce0ce */
+/* 배경 컬러 8d9b6c */
+/* border 컬러 a0af74 */
+
+.main_wrap {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200vh;
+    background-color: #DCDCD9;
+}
+
+.main_recommend_plant_section {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+}
+
+
+.main_back_img_wrap img {}
+
+
+
+/* 왼쪽 식물 */
+
+.main_back_img_left_wrap {
+    position: absolute;
+    /* background-color: aqua; */
+    height: 60%;
+    top: 100px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main_back_img_left_wrap>img {
+    width: 330px;
+    height: 300px;
+    margin-bottom: -20px;
+}
+
+/* 가운데 식물 */
+.main_back_img_center_wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.main_back_img_center_wrap>img {
+    width: 100%;
+    height: 38%;
+}
+
+
+
+/* 오른쪽 식물 */
+
+.main_back_img_right_wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main_back_img_right_wrap>img {
+    margin-top: 5%;
+    width: 350px;
+    height: 400px;
+}
+
+
+/* 메인 센터 */
+
+.main_recommend_plant_center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -30px;
+}
+
+.main_recommend_plant_title {
+    font: bold 10rem "Titillium Web", sans-serif;
+    color: rgb(61, 61, 61);
+}
+
+.main_recommend_plant_subtitle {
+    text-align: center;
+    margin: -30px 0px 50px 0px;
+    font: bold 1.2rem "Titillium Web", sans-serif;
+    color: rgb(61, 61, 61);
+}
+
+/* 메인 식물 추천 버튼 */
+.main_recommend_plant_button {
+    position: relative;
+    border-radius: 30px;
+    color: #dce0ce;
+    border: 4px solid #a0af74;
+    background-color: transparent;
+    width: 230px;
+    height: 40px;
+    padding: 10px;
+    cursor: pointer;
+    --width: 100px;
+    --height: 60px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_recommend_plant_button .text,
+.main_recommend_plant_button .icon-container {
+    position: relative;
+    z-index: 2;
+    font: 500 1.2rem "Titillium Web", sans-serif;
+}
+
+.main_recommend_plant_button .icon-container {
+    --icon-size: 25px;
+    position: relative;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    margin-left: 15px;
+    transition: transform 500ms ease;
+}
+
+.main_recommend_plant_button .icon-container .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    transition: transform 500ms ease, opacity 250ms ease;
+}
+
+.main_recommend_plant_button .icon-container .icon--left {
+    transform: translateX(-200%);
+    opacity: 0;
+}
+
+.main_recommend_plant_button .icon-container .icon svg {
+    width: 100%;
+    height: 100%;
+    fill: #dce0ce;
+}
+
+.main_recommend_plant_button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #8d9b6c;
+    border-radius: var(--height);
+    z-index: 1;
+    transition: transform 500ms ease;
+}
+
+.main_recommend_plant_button:hover::after {
+    transform: translateX(75%);
+}
+
+.main_recommend_plant_button:hover .icon-container {
+    transform: translateX(95%);
+}
+
+.main_recommend_plant_button:hover .icon-container .icon--left {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.main_recommend_plant_button:hover .icon-container .icon--right {
+    transform: translateX(200%);
+    opacity: 0;
+}
+
+.main_recommend_plant_button:hover .text {
+    color: #8d9b6c;
+}
+
+
+/* 검색섹션 */
+.main_search_plant_section {
+    background-color: #DCDCD9;
+    /* position: absolute; */
+    width: 100%;
+    height: 100vh;
+}
+
+/* 어떤 식물을 찾으시나요? */
+
+.main_search_plant_find {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main_search_plant_title_wrap {
+    margin-bottom: 40px;
+}
+
+.main_search_plant_title {
+    font: bold 4.5rem "Titillium Web", sans-serif;
+    color: rgb(61, 61, 61);
+}
+
+.main_search_plant_title>span {
+    font: bold 4.5rem "Titillium Web", sans-serif;
+    color: #a0af74;
+}
+
+.main_search_plant_form_wrap {
+    z-index: 9;
+}
+
+.main_search_plant_input {
+    width: 600px;
+    height: 70px;
+    background: url(../../public/assets/header/header_search.png) no-repeat;
+    background-color: transparent;
+    background-size: 40px;
+    background-position: 560px center;
+    padding-left: 20px;
+    border: 4px solid #a0af74;
+    border-radius: 50px;
+    font: 400 1.3rem "Titillium Web", sans-serif;
+    color: #8d9b6c;
+}
+
+.main_search_plant_input:focus {
+    outline: none;
+}
+
+.main_search_plant_input::placeholder {
+    color: #8d9b6c;
+    font: 400 1.3rem "Titillium Web", sans-serif;
+}
+
+/* 카드섹션 */
+
+.main_search_plant_card {
+    position: relative;
+    width: 100%;
+    height: 45%;
+}
