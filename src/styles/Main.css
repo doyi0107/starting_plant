@@ -112,7 +112,7 @@
     position: relative;
     border-radius: 30px;
     color: #dce0ce;
-    border: 4px solid #a0af74;
+    border: 4px solid #adbb85;
     background-color: transparent;
     width: 230px;
     height: 40px;
@@ -128,6 +128,7 @@
 
 .main_recommend_plant_button .text,
 .main_recommend_plant_button .icon-container {
+    color: #d3dbbd;
     position: relative;
     z-index: 2;
     font: 500 1.2rem "Titillium Web", sans-serif;
@@ -194,7 +195,7 @@
 }
 
 .main_recommend_plant_button:hover .text {
-    color: #8d9b6c;
+    color: #768359;
 }
 
 
@@ -210,7 +211,7 @@
 
 .main_search_plant_find {
     width: 100%;
-    height: 55%;
+    height: 45%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -222,13 +223,13 @@
 }
 
 .main_search_plant_title {
-    font: bold 4.5rem "Titillium Web", sans-serif;
+    font: bold 4rem "Titillium Web", sans-serif;
     color: rgb(61, 61, 61);
 }
 
 .main_search_plant_title>span {
     font: bold 4.5rem "Titillium Web", sans-serif;
-    color: #a0af74;
+    color: #6d7a4d;
 }
 
 .main_search_plant_form_wrap {
@@ -236,17 +237,17 @@
 }
 
 .main_search_plant_input {
-    width: 600px;
-    height: 70px;
+    width: 500px;
+    height: 50px;
     background: url(../../public/assets/header/header_search.png) no-repeat;
     background-color: transparent;
     background-size: 40px;
-    background-position: 560px center;
+    background-position: 470px center;
     padding-left: 20px;
-    border: 4px solid #a0af74;
-    border-radius: 50px;
+    border: 4px solid #8d9b6c;
     font: 400 1.3rem "Titillium Web", sans-serif;
-    color: #8d9b6c;
+    color: #505050;
+        border-radius: 30px;
 }
 
 .main_search_plant_input:focus {
@@ -258,10 +259,14 @@
     font: 400 1.3rem "Titillium Web", sans-serif;
 }
 
+
 /* 카드섹션 */
 
 .main_search_plant_card {
     position: relative;
     width: 100%;
-    height: 45%;
+    height: 55%;
 }
+
+
+

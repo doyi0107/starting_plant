@@ -1,15 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState} from 'react'
 import "../styles/common/all.css";
 import "../styles/Main.css";
-import "../styles/Main_card.css";
-import Maincard from "../components/Main_card";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
+import Card from "../components/Card";
+import axios from "axios";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Main() {
+
   useEffect(() => {
     // ScrollTrigger를 사용한 애니메이션 설정
     gsap.to(".main_back_img_leaf00, .main_back_img_leaf07", {
@@ -87,11 +88,75 @@ export default function Main() {
       opacity: 0,
     });
 
+
+
     // // 컴포넌트 언마운트 시 ScrollTrigger 인스턴스 제거
     // return () => {
     //   ScrollTrigger.getAll().forEach((instance) => instance.kill());
     // };
   }, []); // 빈 의존성 배열을 전달하여 컴포넌트가 마운트될 때 한 번만 실행되도록 합니다.
+
+  const [apiData, setApiData] = useState([]);
+  const [dataArr, setDataArr] = useState([]);
+
+  let cardLen = 0;
+  const plantNames = [];
+  const plantPrices = [];
+  const plantFeatures = [];
+  const imageLink = [];
+  const productLink = [];
+  const [cardController, setCardController] = useState(4);
+
+      const renderplantCard = () => {
+        const result = [];
+        for (let i = 0; i < cardController; i++) {
+          result.push(
+            <Card
+              key={i}
+              plantNames={plantNames[i]}
+              plantPrices={plantPrices[i]}
+              plantFeatures={plantFeatures[i]}
+              imageLink={imageLink[i]}
+              productLink={productLink[i]}
+            />
+          );
+        }
+        return result;
+      };
+
+  // API
+  // const url = 'http://localhost:9090/plants/drjart';
+  const url = "/plants/drjart";
+
+  useEffect(() => {
+    const asyncDrjartGet = async () => {
+      try {
+        const response = await axios.get(url);
+        setApiData(response.data);
+      } catch (error) {
+        console.log("GET request XXXXXX - 식물정보!!");
+      }
+    };
+
+    asyncDrjartGet();
+  }, []);
+
+  useEffect(() => {
+    setDataArr({ ...apiData });
+  }, [apiData]);
+
+  if (Array.isArray(dataArr.data)) {
+      dataArr.data.forEach((each) => {
+        plantNames.push(each.name);
+        plantPrices.push(each.price);
+        plantFeatures.push(each.plantFeature);
+        imageLink.push(each.imageLink);
+        productLink.push(each.productLink);
+        cardLen++;
+      });
+  }
+  // reference:  https://stackoverflow.com/questions/50046841/proper-way-to-make-api-fetch-post-with-async-await
+  // reference:  https://codingbroker.tistory.com/123
   return (
     <div>
       <div className="main_wrap">
@@ -193,7 +258,11 @@ export default function Main() {
           </div>
 
           <div className="main_search_plant_card">
-            <Maincard />
+
+            <div className="main_search_plant_card_wrap">
+              {/* 여기에 Card.js 컴포넌트!! */}
+              {renderplantCard()}
+            </div>
           </div>
         </div>
       </div>
