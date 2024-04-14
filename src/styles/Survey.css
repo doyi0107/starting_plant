@@ -1,0 +1,66 @@
+.survey_wrap {
+    width: 100%;
+    height: 100vh;
+    background-color: #DCDCD9;
+}
+
+.survey_inner {
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress_bar_text {
+    font: bold 4rem "Titillium Web", sans-serif;
+    color: #8d9b6c;
+    margin-top: -200px;
+}
+
+.survey_step_title {
+    font: bold 3.5rem "Titillium Web", sans-serif;
+    margin: 30px 0px;
+}
+
+/* 프로그레스바 */
+
+.progress_bar_wrap {
+    width: 90%;
+        height: 15px;
+    margin: 0 auto;
+}
+
+.progress_bar {
+    height: 15px;
+    background-color: #8d9b6c;
+    text-align: center;
+    color: white;
+    line-height: 20px;
+}
+
+/* survey 컴포넌트 */
+
+button {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.step_box_wrap {
+    /* background-color: aqua; */
+    width: 80vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.survey_step_card {
+    width: 20vw;
+    height: 100%;
+    border: 3px solid #8d9b6c;
+}
