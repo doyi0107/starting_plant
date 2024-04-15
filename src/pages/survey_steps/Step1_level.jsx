@@ -1,12 +1,22 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import '../../styles/common/all.css';
 import "../../styles/Survey.css";
 
-export default function Step1_level({ nextStep, updateUserData }) {
+export default function Step1_level({ nextStep, updateUserData, selectedLevel }) {
+const [selectedLevelState, setSelectedLevelState] = useState(selectedLevel);
   const handleSelect = (level) => {
     updateUserData("level", level);
+   setSelectedLevelState(level);
+  };
+
+  const next = () => {
     nextStep();
   };
+
+  useEffect(() => {
+    // 상위 컴포넌트로부터 받은 selectedLevel이 변경될 경우 로컬 상태 업데이트
+    setSelectedLevelState(selectedLevel);
+  }, [selectedLevel]);
   return (
     <div>
       <div className="step_box_wrap">
@@ -17,21 +27,44 @@ export default function Step1_level({ nextStep, updateUserData }) {
           {/* 간단한 예시로, 실제 구현은 사용자의 입력을 받는 UI 요소에 따라 다름 */}
           <button
             onClick={() => handleSelect("Beginner")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedLevel === "Beginner" ? "selected" : ""
+            }`}
           >
-            초보자
+            <img
+              className="step1_level_img step1_level_beginner"
+              src="assets/survey/step1_newbie.png"
+            ></img>
+            <p className="step1_level_text">초보자</p>
           </button>
           <button
             onClick={() => handleSelect("Intermediate")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedLevel === "Intermediate" ? "selected" : ""
+            }`}
           >
-            경험자
+            <img
+              className="step1_level_img step1_level_Inter"
+              src="assets/survey/step1_inter.png"
+            ></img>
+            <p className="step1_level_text">경험자</p>
           </button>
           <button
             onClick={() => handleSelect("Expert")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedLevel === "Expert" ? "selected" : ""
+            }`}
           >
-            전문가
+            <img
+              className="step1_level_img step1_level_Expert"
+              src="assets/survey/step1_Expert.png"
+            ></img>
+            <p className="step1_level_text">전문가</p>
+          </button>
+        </div>
+        <div className="prev_next_button_wrap">
+          <button onClick={() => next()} className="next_button">
+            다음 단계
           </button>
         </div>
       </div>

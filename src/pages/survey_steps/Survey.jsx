@@ -25,7 +25,7 @@ function Survey() {
     setStep(step + 1);
   };
 
-  // "뒤로 가기" 버튼을 위한 함수
+  // "이전 단계" 버튼을 위한 함수
   const prevStep = () => {
     if (step > 1) {
       setStep(step - 1);
@@ -40,7 +40,11 @@ function Survey() {
     switch (step) {
       case 1:
         return (
-          <Step1Level nextStep={nextStep} updateUserData={updateUserData} />
+          <Step1Level
+            nextStep={nextStep}
+            updateUserData={updateUserData}
+            selectedLevel={userData.level}
+          />
         );
       case 2:
         return (
@@ -48,6 +52,7 @@ function Survey() {
             nextStep={nextStep}
             updateUserData={updateUserData}
             prevStep={prevStep}
+            selectedType={userData.type}
           />
         );
       case 3:
@@ -56,6 +61,7 @@ function Survey() {
             nextStep={nextStep}
             updateUserData={updateUserData}
             prevStep={prevStep}
+            selectedPlace={userData.place}
           />
         );
       case 4:
@@ -64,6 +70,7 @@ function Survey() {
             nextStep={nextStep}
             updateUserData={updateUserData}
             prevStep={prevStep}
+            selectedPrice={userData.price}
           />
         );
       case 5:
@@ -72,6 +79,7 @@ function Survey() {
             nextStep={nextStep}
             updateUserData={updateUserData}
             prevStep={prevStep}
+            selectedLife={userData.life}
           />
         );
       case 6:
@@ -80,6 +88,7 @@ function Survey() {
             nextStep={nextStep}
             updateUserData={updateUserData}
             prevStep={prevStep}
+            selectedHeight={userData.height}
           />
         );
       default:

@@ -1,50 +1,93 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../../styles/common/all.css";
 import "../../styles/Survey.css";
 
-export default function Step6_height({ nextStep, updateUserData, prevStep }) {
+export default function Step6_height({ nextStep, updateUserData, prevStep, selectedHeight }) {
+  const [selectedHeightState, setSelectedHeightState] = useState(selectedHeight);
   const handleSelect = (height) => {
     updateUserData("height", height);
+    setSelectedHeightState(height);
+  };
+
+  const next = () => {
     nextStep();
   };
+
+  useEffect(() => {
+    // 상위 컴포넌트로부터 받은 selectedHeight이 변경될 경우 로컬 상태 업데이트
+    setSelectedHeightState(selectedHeight);
+  }, [selectedHeight]);
   return (
     <div>
       <div className="step_box_wrap">
-        <h2 className="survey_step_title">Step 6</h2>
+        <h2 className="survey_step_title">얼마나 자라는 식물을 찾으시나요?</h2>
         <div className="survey_step_card_wrap">
           <button
             onClick={() => handleSelect("20_cm")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedHeight === "20_cm" ? "selected" : ""
+            }`}
           >
-            20cm 이하
+            <img
+              className="step6_height_img step6_height_all"
+              src="assets/survey/step6_grow.png"
+            ></img>
+            <p className="step6_height_text">20cm 이하</p>
           </button>
           <button
             onClick={() => handleSelect("50_cm")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedHeight === "50_cm" ? "selected" : ""
+            }`}
           >
-            50cm 이하
+            <img
+              className="step6_height_img step6_height_all"
+              src="assets/survey/step6_grow.png"
+            ></img>
+            <p className="step6_height_text">50cm 이하</p>
           </button>
           <button
             onClick={() => handleSelect("1_m")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedHeight === "1_m" ? "selected" : ""
+            }`}
           >
-            1m 이하
+            <img
+              className="step6_height_img step6_height_all"
+              src="assets/survey/step6_grow.png"
+            ></img>
+            <p className="step6_height_text">1m 이하</p>
           </button>
           <button
             onClick={() => handleSelect("5_m")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedHeight === "5_m" ? "selected" : ""
+            }`}
           >
-            5m 이하
+            <img
+              className="step6_height_img step6_height_all"
+              src="assets/survey/step6_grow.png"
+            ></img>
+            <p className="step6_height_text">5m 이하</p>
           </button>
           <button
             onClick={() => handleSelect("all")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedHeight === "all" ? "selected" : ""
+            }`}
           >
-            상관없음
+            <img
+              className="step6_height_img step6_height_all"
+              src="assets/survey/step_all.png"
+            ></img>
+            <p className="step6_height_text"> 상관 없음</p>
           </button>
         </div>
-        <div className="prev_button_wrap">
-          <button onClick={prevStep}>뒤로 가기</button>
+        <div className="prev_next_button_wrap">
+          <button onClick={prevStep}>이전 단계</button>
+          <button onClick={() => next()} className="next_button">
+            결과 확인
+          </button>
         </div>
       </div>
     </div>

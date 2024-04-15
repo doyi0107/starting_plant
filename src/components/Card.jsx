@@ -23,7 +23,7 @@ function Card({
 
       <div className="plant_feature">
         {`#적정온도10ºC`}{" "}{" "}
-        {plantFeatures !== "상관없음" ? `#${plantFeatures}` : `#멀티제형`}
+        {plantFeatures !== "상관 없음" ? `#${plantFeatures}` : `#멀티제형`}
       </div>
     </div>
   );

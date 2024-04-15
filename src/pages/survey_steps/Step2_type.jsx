@@ -1,62 +1,115 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../../styles/common/all.css";
 import "../../styles/Survey.css";
 
-export default function Step2_type({ nextStep, updateUserData, prevStep }) {
+export default function Step2_type({
+  nextStep,
+  updateUserData,
+  prevStep,
+  selectedType,
+}) {
+  const [selectedTypeState, setSelectedTypeState] = useState(selectedType);
   const handleSelect = (type) => {
     updateUserData("type", type);
+    setSelectedTypeState(type);
+  };
+
+  const next = () => {
     nextStep();
   };
+
+  useEffect(() => {
+    // 상위 컴포넌트로부터 받은 selectedType이 변경될 경우 로컬 상태 업데이트
+    setSelectedTypeState(selectedType);
+  }, [selectedType]);
   return (
     <div>
       <div className="step_box_wrap">
-        <h2 className="survey_step_title">Step 2</h2>
+        <h2 className="survey_step_title">어떤 종류의 식물을 키우고 싶나요?</h2>
         <div className="survey_step_card_wrap">
           <button
             onClick={() => handleSelect("flower")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedType === "flower" ? "selected" : ""
+            }`}
           >
-            꽃이 피는 식물
+            <img
+              className="step2_type_img step2_type_flower"
+              src="assets/survey/step2_flower.png"
+            ></img>
+            <p className="step2_type_text">꽃이 피는 식물</p>
+            <p>예)장미,튤립</p>
           </button>
           <button
             onClick={() => handleSelect("tree")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedType === "tree" ? "selected" : ""
+            }`}
           >
-            나무형 식물
+            <img
+              className="step2_type_img step2_type_tree"
+              src="assets/survey/step2_tree.png"
+            ></img>
+            <p className="step2_type_text">나무형 식물</p>
+            <p>예)벚나무,단풍나무</p>
           </button>
           <button
             onClick={() => handleSelect("foliage")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedType === "foliage" ? "selected" : ""
+            }`}
           >
-            관엽 식물
+            <img
+              className="step2_type_img step2_type_foliage"
+              src="assets/survey/step2_foliage.png"
+            ></img>
+            <p className="step2_type_text">관엽 식물</p>
+            <p>예)몬스테라,스파티필름</p>
           </button>
           <button
             onClick={() => handleSelect("succulents")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedType === "succulents" ? "selected" : ""
+            }`}
           >
-            다육 식물
+            <img
+              className="step2_type_img step2_type_succulents"
+              src="assets/survey/step2_succulents.png"
+            ></img>
+            <p className="step2_type_text">다육 식물</p>
+            <p>예)선인장,자브라 식물</p>
           </button>
           <button
             onClick={() => handleSelect("Herb")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedType === "Herb" ? "selected" : ""
+            }`}
           >
-            허브 식물
+            <img
+              className="step2_type_img step2_type_herb"
+              src="assets/survey/step2_herb.png"
+            ></img>
+            <p className="step2_type_text">허브 식물</p>
+            <p>예)바질,로즈마리</p>
           </button>
           <button
             onClick={() => handleSelect("all")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedType === "all" ? "selected" : ""
+            }`}
           >
-            상관없음
-          </button>
-          <button
-            onClick={() => handleSelect("Expert")}
-            className="survey_step_card"
-          >
-            전문가
+            <img
+              className="step2_type_img step2_type_beginner"
+              src="assets/survey/step_all.png"
+            ></img>
+            <p className="step2_type_text">상관 없음</p>
           </button>
         </div>
-        <div className="prev_button_wrap">
-          <button onClick={prevStep}>뒤로 가기</button>
+        <div className="prev_next_button_wrap">
+          <button onClick={prevStep}>이전 단계</button>
+          <button onClick={() => next()} className="next_button">
+            다음 단계
+          </button>
         </div>
       </div>
     </div>

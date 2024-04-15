@@ -5,6 +5,7 @@
 }
 
 .survey_inner {
+    /* background-color: #8d9b6c; */
     width: 90%;
     height: 90%;
     margin: 0 auto;
@@ -15,21 +16,26 @@
 }
 
 .progress_bar_text {
-    font: bold 4rem "Titillium Web", sans-serif;
+    font: bold 3rem "Titillium Web", sans-serif;
     color: #8d9b6c;
-    margin-top: -200px;
 }
 
 .survey_step_title {
-    font: bold 3.5rem "Titillium Web", sans-serif;
-    margin: 30px 0px;
+    height: 100px;
+    font: bold 2.8rem "Titillium Web", sans-serif;
+    margin: 10px 0px 30px 0px;
+}
+
+.survey_step_title p {
+    text-align: center;
+    font: 500 0.9rem "Titillium Web", sans-serif;
 }
 
 /* 프로그레스바 */
 
 .progress_bar_wrap {
     width: 90%;
-        height: 15px;
+    /* height: 5%; */
     margin: 0 auto;
 }
 
@@ -37,8 +43,6 @@
     height: 15px;
     background-color: #8d9b6c;
     text-align: center;
-    color: white;
-    line-height: 20px;
 }
 
 /* survey 컴포넌트 */
@@ -50,17 +54,103 @@ button {
 }
 
 .step_box_wrap {
-    /* background-color: aqua; */
     width: 80vw;
-    height: 100%;
+    height: 60vh;
     display: flex;
-    justify-content: space-around;
     flex-direction: column;
     align-items: center;
 }
 
+.survey_step_card_wrap {
+    width: 100%;
+    height: 45vh;
+    display: flex;
+    justify-content: space-between;
+}
+
 .survey_step_card {
-    width: 20vw;
+
+    box-sizing: border-box;
+    flex: 1;
+    width: auto;
+    margin: 0 20px;
     height: 100%;
-    border: 3px solid #8d9b6c;
+    border: 7px solid #c6d1a6;
+    border-radius: 50px;
+    background-color: #c6d1a6;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.survey_step_card:hover {
+    cursor: pointer;
+}
+
+
+/* 카드 안 ui */
+
+/* 이미지 */
+.step1_level_img,
+.step3_place_img {
+    width: 60%;
+    height: 65%;
+}
+
+.step2_type_img,
+.step4_price_img,
+.step5_life_img,.step6_height_img {
+    width: 70%;
+    height: 60%;
+}
+
+.step2_type_foliage {
+    width: 90%;
+}
+
+.step3_place_img,
+.step4_price_img {
+    margin-bottom: 20px;
+}
+
+/* text */
+.step1_level_text,
+.step3_place_text,
+.step4_price_text{
+    font: bold 1.5rem "Titillium Web", sans-serif;
+}
+
+.step2_type_text{
+    margin-top: 20px;
+    font: bold 1.1rem "Titillium Web", sans-serif;
+}
+
+.step5_life_text,
+.step6_height_text {
+    font: bold 1.5rem "Titillium Web", sans-serif;
+    margin-top: 20px;
+}
+
+
+.survey_step_card.selected {
+    border-color: #768651;
+}
+
+/* 이전단계 다음 단계 */
+
+.prev_next_button_wrap {
+    width: 100%;
+    text-align: center;
+    height: 20px;
+}
+
+.prev_next_button_wrap button {
+    margin: 30px 0px;
+    font: bold 1.5rem "Titillium Web", sans-serif;
+    color: #8d9b6c;
+}
+
+.prev_next_button_wrap button:hover {
+    cursor: pointer;
 }

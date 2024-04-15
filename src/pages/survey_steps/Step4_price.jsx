@@ -1,50 +1,93 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../../styles/common/all.css";
 import "../../styles/Survey.css";
 
-export default function Step4_price({ nextStep, updateUserData, prevStep }) {
+export default function Step4_price({ nextStep, updateUserData, prevStep, selectedPrice }) {
+  const [selectedPriceState, setSelectedPriceState] = useState(selectedPrice);
   const handleSelect = (price) => {
     updateUserData("price", price);
-    nextStep();
+    setSelectedPriceState(price);
   };
+    const next = () => {
+      nextStep();
+    };
+
+    useEffect(() => {
+      // 상위 컴포넌트로부터 받은 selectedPrice이 변경될 경우 로컬 상태 업데이트
+      setSelectedPriceState(selectedPrice);
+    }, [selectedPrice]);
   return (
     <div>
       <div className="step_box_wrap">
-        <h2 className="survey_step_title">Step 2</h2>
+        <h2 className="survey_step_title">어떤 가격대를 찾으시나요?
+        <p>1년 정도 자란 식물을 기준으로 매겼습니다.</p></h2>
         <div className="survey_step_card_wrap">
           <button
             onClick={() => handleSelect("1_won")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedPrice === "1_won" ? "selected" : ""
+            }`}
           >
-            만원 이하
+            <img
+              className="step4_price_img step4_price_1_won"
+              src="assets/survey/step4_1.png"
+            ></img>
+            <p className="step4_price_text">만원 이하</p>
           </button>
           <button
             onClick={() => handleSelect("5_won")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedPrice === "5_won" ? "selected" : ""
+            }`}
           >
-            오만원 이하
+            <img
+              className="step4_price_img step4_price_5_won"
+              src="assets/survey/step4_5.png"
+            ></img>
+            <p className="step4_price_text">오만원 이하</p>
           </button>
           <button
             onClick={() => handleSelect("10_won")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedPrice === "10_won" ? "selected" : ""
+            }`}
           >
-            십만원 이하
+            <img
+              className="step4_price_img step4_price_10_won"
+              src="assets/survey/step4_10.png"
+            ></img>
+            <p className="step4_price_text">십만원 이하</p>
           </button>
           <button
             onClick={() => handleSelect("20_won")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedPrice === "20_won" ? "selected" : ""
+            }`}
           >
-            이십만원 이하
+            <img
+              className="step4_price_img step4_price_20_won"
+              src="assets/survey/step4_20.png"
+            ></img>
+            <p className="step4_price_text">이십만원 이하</p>
           </button>
           <button
             onClick={() => handleSelect("all")}
-            className="survey_step_card"
+            className={`survey_step_card ${
+              selectedPrice === "all" ? "selected" : ""
+            }`}
           >
-            상관없음
+            <img
+              className="step4_price_img step4_price_all"
+              src="assets/survey/step_all.png"
+            ></img>
+            <p className="step4_price_text">상관 없음</p>
           </button>
         </div>
-        <div className="prev_button_wrap">
-          <button onClick={prevStep}>뒤로 가기</button>
+        <div className="prev_next_button_wrap">
+          <button onClick={prevStep}>이전 단계</button>
+          <button onClick={() => next()} className="next_button">
+            다음 단계
+          </button>
         </div>
       </div>
     </div>
