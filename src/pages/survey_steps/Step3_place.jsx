@@ -25,7 +25,7 @@ export default function Step3_place({
   return (
     <div>
       <div className="step_box_wrap">
-        <h2 className="survey_step_title">어디서 식물을 키우나요?</h2>
+        <h2 className="survey_step_title">식물을 키우는 장소가 어딘가요?</h2>
         <div className="survey_step_card_wrap">
           <button
             onClick={() => handleSelect("indoor")}

@@ -69,15 +69,14 @@ button {
 }
 
 .survey_step_card {
-
     box-sizing: border-box;
     flex: 1;
     width: auto;
     margin: 0 20px;
     height: 100%;
-    border: 7px solid #c6d1a6;
+    border: 7px solid #d0dab3;
     border-radius: 50px;
-    background-color: #c6d1a6;
+    background-color: #d0dab3;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -148,9 +147,11 @@ button {
 .prev_next_button_wrap button {
     margin: 30px 0px;
     font: bold 1.5rem "Titillium Web", sans-serif;
-    color: #8d9b6c;
+    color: black;
+    transition: all 0.2s;
 }
 
 .prev_next_button_wrap button:hover {
     cursor: pointer;
+    color: #8d9b6c;
 }
