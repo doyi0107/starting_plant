@@ -8,9 +8,16 @@ function SearchResult() {
 
   return (
     <div>
-      {plants.map((plant) => (
-        <div key={plant.id}>{plant.name}</div> // 검색 결과 출력
-      ))}
+      {plants ? (
+        plants.map((plant) => (
+          <div key={plant.id}>
+            <h2>{plant.name}</h2>
+            <p>{plant.description}</p>
+          </div>
+        ))
+      ) : (
+        <p>검색 결과가 없습니다.</p>
+      )}
     </div>
   );
 }
