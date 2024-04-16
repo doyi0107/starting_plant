@@ -30,17 +30,21 @@ export default function Survey_result({ userData }) {
     fetchPlants();
   }, [userData]); // userData가 변경될 때마다 이 useEffect를 다시 실행합니다.
   return (
-    <div>
-      <h2 className="last_test">추천 식물</h2>
-      {recommendedPlants.length > 0 ? (
-        <ul>
-          {recommendedPlants.map((plant, index) => (
-            <li key={index}>{plant.name}</li> // 실제 API 응답에 따라 필드명은 달라질 수 있습니다.
-          ))}
-        </ul>
-      ) : (
-        <p>추천할 식물이 없습니다. 조건을 변경해 보세요.</p>
-      )}
+    <div className="survey_result_wrap">
+      <div className="survey_result_inner">
+        <h2 className="survey_result_title">추천 식물</h2>
+        {recommendedPlants.length > 0 ? (
+          <ul className="survey_result_card_wrap">
+            {recommendedPlants.map((plant, index) => (
+              <li key={index} className="survey_result_card">
+                {plant.name}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>추천할 식물이 없습니다. 조건을 변경해 보세요.</p>
+        )}
+      </div>
     </div>
   );
 }

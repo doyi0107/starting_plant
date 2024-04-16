@@ -36,18 +36,22 @@
 }
 
 
-.header_seach_bar_input {
+/* inner */
+.header_seach_bar_inner {
     width: 300px;
     height: 40px;
-    background: url(../../../public/assets/header/header_search.png) no-repeat;
     background-color: #a0af74;
-    background-size: 30px;
-    background-position: 270px center;
-    padding-left: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header_seach_bar_input {
+    width: 200px;
     border: none;
-    /* border-radius: 12px; */
+    background-color: #a0af74;
     color: #ffffff;
-    font: 400 0.9rem "Titillium Web", sans-serif;
+    font: 400 1rem "Titillium Web", sans-serif;
 }
 
 .header_seach_bar_input:focus {
@@ -57,4 +61,16 @@
 .header_seach_bar_input::placeholder {
     color: #ffffff;
     font: 400 0.9rem "Titillium Web", sans-serif;
+}
+
+.header_seach_bar_button {
+    width: 40px;
+    height: 30px;
+    background: url(../../../public/assets/header/header_search.png) no-repeat;
+    background-size: 30px;
+    font: 400 0.9rem "Titillium Web", sans-serif;
+}
+
+.header_seach_bar_button:hover {
+    cursor: pointer;
 }

@@ -232,22 +232,29 @@
     color: #6d7a4d;
 }
 
-.main_search_plant_form_wrap {
+.main_search_plant_form_wrap,
+.main_serach_button {
     z-index: 9;
 }
 
-.main_search_plant_input {
+.main_serach_form_inner {
     width: 500px;
     height: 50px;
-    background: url(../../public/assets/header/header_search.png) no-repeat;
     background-color: transparent;
-    background-size: 40px;
-    background-position: 470px center;
-    padding-left: 20px;
     border: 4px solid #8d9b6c;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main_search_plant_input {
+    background-color: transparent;
+    border: none;
+    width: 400px;
+    height: 50px;
     font: 400 1.3rem "Titillium Web", sans-serif;
     color: #505050;
-        border-radius: 30px;
 }
 
 .main_search_plant_input:focus {
@@ -259,6 +266,22 @@
     font: 400 1.3rem "Titillium Web", sans-serif;
 }
 
+.main_serach_button {
+    width: 40px;
+    height: 40px;
+    background: url(../../public/assets/header/header_search.png) no-repeat;
+    background-size: 40px;
+    font: 400 1.3rem "Titillium Web", sans-serif;
+}
+
+.main_serach_button:hover{
+    cursor: pointer;
+}
+/* .main_serach_button_img{
+    width: 100%;
+    height: 100%;
+    background-color: #6d7a4d;
+} */
 
 /* 카드섹션 */
 
@@ -267,6 +290,3 @@
     width: 100%;
     height: 55%;
 }
-
-
-
