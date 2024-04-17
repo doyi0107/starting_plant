@@ -15,7 +15,13 @@ export default function Step2_type({
   };
 
   const next = () => {
-    nextStep();
+    if (!selectedType) {
+      // 선택된 레벨이 없을 때 알람을 띄움
+      alert("다음 단계로 넘어가려면 선택지 중 하나를 골라주세요.");
+    } else {
+      // 선택된 레벨이 있을 때 다음 단계로 이동
+      nextStep();
+    }
   };
 
   useEffect(() => {

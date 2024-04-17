@@ -8,9 +8,15 @@ export default function Step4_price({ nextStep, updateUserData, prevStep, select
     updateUserData("price", price);
     setSelectedPriceState(price);
   };
-    const next = () => {
+  const next = () => {
+    if (!selectedPrice) {
+      // 선택된 레벨이 없을 때 알람을 띄움
+      alert("다음 단계로 넘어가려면 선택지 중 하나를 골라주세요.");
+    } else {
+      // 선택된 레벨이 있을 때 다음 단계로 이동
       nextStep();
-    };
+    }
+  };
 
     useEffect(() => {
       // 상위 컴포넌트로부터 받은 selectedPrice이 변경될 경우 로컬 상태 업데이트

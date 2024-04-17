@@ -10,9 +10,14 @@ export default function Step5_life({ nextStep, updateUserData, prevStep, selecte
   };
 
   const next = () => {
-    nextStep();
+    if (!selectedLife) {
+      // 선택된 레벨이 없을 때 알람을 띄움
+      alert("다음 단계로 넘어가려면 선택지 중 하나를 골라주세요.");
+    } else {
+      // 선택된 레벨이 있을 때 다음 단계로 이동
+      nextStep();
+    }
   };
-
   useEffect(() => {
     // 상위 컴포넌트로부터 받은 selectedLife이 변경될 경우 로컬 상태 업데이트
     setSelectedLifeState(selectedLife);
@@ -20,7 +25,7 @@ export default function Step5_life({ nextStep, updateUserData, prevStep, selecte
   return (
     <div>
       <div className="step_box_wrap">
-        <h2 className="survey_step_title">몇 년 동안 키울 수 있나요?</h2>
+        <h2 className="survey_step_title">원하는 식물의 수명이 어떻게 되나요?</h2>
         <div className="survey_step_card_wrap">
           <button
             onClick={() => handleSelect("1_year")}
