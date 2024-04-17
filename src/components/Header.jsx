@@ -22,7 +22,7 @@ export default function Header() {
       );
       // 검색 결과를 '/results' 페이지로 전달하며 페이지 이동
       navigate.push({
-        pathname: "/main_serach_results",
+        pathname: "/serach_results",
         state: { plants: response.data },
       });
     } catch (error) {

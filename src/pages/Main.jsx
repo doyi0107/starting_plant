@@ -7,37 +7,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import axios from "axios";
+import SearchInput from "../components/Search_input"; // 올바른 경로로 수정해주세요
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Main() {
-  // seaarch기능
-  const [searchTerm, setSearchTerm] = useState("");
-  const navigate = useNavigate(); // useHistory 훅 사용
 
-  const handleSearchSubmit = async (event) => {
-    event.preventDefault();
-    if (!searchTerm) {
-      alert("검색어를 입력해주세요.");
-      return;
-    }
-
-    try {
-      const response = await axios.get(
-        `https://example.com/api/plants?query=${searchTerm}`
-      );
-      // 검색 결과를 '/results' 페이지로 전달하며 페이지 이동
-     navigate.push({
-       pathname: "/main_serach_results",
-       state: { plants: response.data },
-     });
-    } catch (error) {
-      alert("검색 중 오류가 발생했습니다.", error);
-      console.error("식물 검색 중 오류가 발생했습니다.", error);
-    }
-  };
-
-    // 
 
   useEffect(() => {
     // ScrollTrigger를 사용한 애니메이션 설정
@@ -275,23 +251,7 @@ export default function Main() {
                 <span>어떤 식물을</span> 찾으시나요?
               </span>
             </div>
-            <div className="main_search_plant_form_wrap">
-              <form
-                className="main_search_plant_form"
-                onSubmit={handleSearchSubmit}
-              >
-                <div className="main_serach_form_inner">
-                  <input
-                    value={searchTerm}
-                    onChange={(event) => setSearchTerm(event.target.value)}
-                    className="main_search_plant_input"
-                    placeholder="자세히 알고 싶은 식물을 입력해주세요."
-                  ></input>
-                  <button type="submit" className="main_serach_button">
-                  </button>
-                </div>
-              </form>
-            </div>
+            <SearchInput />
           </div>
 
           <div className="main_search_plant_card">

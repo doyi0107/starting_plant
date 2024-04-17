@@ -34,15 +34,18 @@
 /* 프로그레스바 */
 
 .progress_bar_wrap {
+    background-color: rgba(179, 179, 179, 0.5);
     width: 90%;
-    /* height: 5%; */
     margin: 0 auto;
+    margin-top: 30px;
+    /* border-radius: 20px; */
 }
 
 .progress_bar {
     height: 10px;
     background-color: #8d9b6c;
     text-align: center;
+    /* border-radius: 20px; */
 }
 
 /* survey 컴포넌트 */

@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />}></Route>
           <Route path="/recommend_plant" element={<RecommendPlant />}></Route>
-          <Route path="/main_serach_results" element={<SearchResult />} />
+          <Route path="/serach_results" element={<SearchResult />} />
         </Routes>
       </BrowserRouter>
       <Footer />
