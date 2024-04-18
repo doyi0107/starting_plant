@@ -1,7 +1,7 @@
 
 
 // styling
-import "../styles/Card.css";
+import "../styles/Main_card.css";
 
 function Card({
   plantNames,
@@ -18,11 +18,10 @@ function Card({
         className="plant_img"
         style={{ backgroundImage: "url(" + `${imageLink}` + ")" }}
       ></div>
-      <div className="plant_price">{plantPrices + priceSign}</div>
       <div className="plant_name">커피 나무{plantNames}</div>
 
       <div className="plant_feature">
-        {`#적정온도10ºC`}{" "}{" "}
+        {`#관육식물`}{" "}{" "}
         {plantFeatures !== "상관 없음" ? `#${plantFeatures}` : `#멀티제형`}
       </div>
     </div>

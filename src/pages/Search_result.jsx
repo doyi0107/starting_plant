@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../styles/Search_result.css";
 import SearchInput from "../components/Search_input";
 
 function Search() {
   const location = useLocation();
+  const navigate = useNavigate();
   // useLocation에서 가져온 기본 검색 결과
   const { plants: initialPlants, searchTerm: initialSearchTerm } =
     location.state || {
@@ -15,6 +17,11 @@ function Search() {
   // 로컬 상태로 검색 결과와 검색어 관리
   const [plants, setPlants] = useState(initialPlants);
   const [searchTerm, setSearchTerm] = useState(initialSearchTerm);
+
+  // 카드 클릭 핸들러 함수
+  const handleCardClick = (plantName) => {
+    navigate(`/detail/Rose`);
+  };
 
   return (
     <div>
@@ -37,7 +44,11 @@ function Search() {
           <div className="search_result_card_wrap">
             {plants.length > 0 ? (
               plants.map((plant) => (
-                <div key={plant.id} className="search_result_card">
+                <div
+                  key={plant.id}
+                  className="search_result_card"
+                  onClick={() => handleCardClick(plant.name)}
+                >
                   <h2 className="search_result_plant_name">{plant.name}</h2>
                   <p className="search_result_plant_detail">
                     {plant.description}
@@ -51,7 +62,6 @@ function Search() {
                   검색 결과가 없습니다.
                 </p>
               </div>
-              
             )}
           </div>
         </div>

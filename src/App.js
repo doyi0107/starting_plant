@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Main from "./pages/Main";
 import SearchResult from "./pages/Search_result";
 import RecommendPlant from "./pages/survey_steps/Survey";
+import CardDetail from "./pages/Card_detail";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Main />}></Route>
           <Route path="/recommend_plant" element={<RecommendPlant />}></Route>
           <Route path="/serach_results" element={<SearchResult />} />
+          <Route path="/detail/:plantName" element={<CardDetail />} />
         </Routes>
       </BrowserRouter>
       <Footer />

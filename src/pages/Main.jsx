@@ -5,7 +5,7 @@ import "../styles/Main.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
-import Card from "../components/Card";
+import Card from "../components/Main_card";
 import axios from "axios";
 import SearchInput from "../components/Search_input"; // 올바른 경로로 수정해주세요
 
@@ -105,7 +105,6 @@ export default function Main() {
 
   let cardLen = 0;
   const plantNames = [];
-  const plantPrices = [];
   const plantFeatures = [];
   const imageLink = [];
   const productLink = [];
@@ -118,7 +117,6 @@ export default function Main() {
             <Card
               key={i}
               plantNames={plantNames[i]}
-              plantPrices={plantPrices[i]}
               plantFeatures={plantFeatures[i]}
               imageLink={imageLink[i]}
               productLink={productLink[i]}
@@ -152,7 +150,6 @@ export default function Main() {
   if (Array.isArray(dataArr.data)) {
       dataArr.data.forEach((each) => {
         plantNames.push(each.name);
-        plantPrices.push(each.price);
         plantFeatures.push(each.plantFeature);
         imageLink.push(each.imageLink);
         productLink.push(each.productLink);
