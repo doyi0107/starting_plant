@@ -52,7 +52,7 @@ function SearchInput({ onSearch }) {
             value={searchTerm}
             onChange={(event) => setSearchTerm(event.target.value)}
             className="main_search_plant_input"
-            placeholder="자세히 알고 싶은 식물을 입력해주세요."
+            placeholder="찾으시는 식물을 입력해주세요."
           ></input>
           <button type="submit" className="main_serach_button"></button>
         </div>

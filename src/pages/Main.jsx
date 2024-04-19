@@ -223,7 +223,16 @@ export default function Main() {
                 loop={true}
                 speed={600}
                 spaceBetween={30}
-                slidesPerView={4}
+                breakpoints={{
+                  // 640px 이상일 때
+                  300: {
+                    slidesPerView:3,
+                  },
+                  // 1024px 이상일 때
+                  1024: {
+                    slidesPerView: 4,
+                  },
+                }}
                 simulateTouch={true} // 마우스로 드래그 가능하게 설정
                 grabCursor={true} // 마우스 커서 변경 설정
                 centeredSlides={false}
