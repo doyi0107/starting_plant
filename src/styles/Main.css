@@ -1,7 +1,3 @@
-/* 글씨 컬러 dce0ce */
-/* 배경 컬러 8d9b6c */
-/* border 컬러 a0af74 */
-
 .main_wrap {
     position: relative;
     top: 0;
@@ -15,7 +11,7 @@
     position: sticky;
     top: 0;
     left: 0;
-    width: 100%;
+    /* width: 100%; */
     height: 50%;
     overflow: hidden;
 }
@@ -47,16 +43,17 @@
 /* 가운데 식물 */
 .main_back_img_center_wrap {
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     left: 0;
     bottom: 0px;
     display: flex;
     align-items: flex-end;
+    justify-content: center;
 }
 
 .main_back_img_center_wrap>img {
-    width: 100%;
+    width: 20%;
     height: 38%;
 }
 
@@ -96,6 +93,7 @@
 }
 
 .main_recommend_plant_title {
+    text-align: center;
     font: bold 10rem "Titillium Web", sans-serif;
     color: rgb(61, 61, 61);
 }
@@ -206,4 +204,124 @@
     position: relative;
     width: 100%;
     height: 55%;
+}
+
+@media screen and (max-width: 1200px) {
+    /* 왼쪽 식물 */
+
+    .main_back_img_left_wrap>img {
+        width: 280px;
+        height: 300px;
+    }
+
+    /* 가운데 식물 */
+    .main_back_img_center_wrap>img {
+        width: 20%;
+        height: 30%;
+    }
+
+    /* 오른쪽 식물 */
+
+
+    .main_back_img_right_wrap>img {
+        width: 280px;
+        height: 400px;
+    }
+
+    /* main_recommend_plant_title */
+
+    .main_recommend_plant_title {
+        font-size: 7rem;
+    }
+
+    .main_recommend_plant_subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    /* 왼쪽 식물 */
+
+    .main_back_img_left_wrap>img {
+        width: 240px;
+        height: 260px;
+    }
+
+    /* 가운데 식물 */
+    .main_back_img_center_wrap>img {
+        width: 30%;
+        height: 30%;
+    }
+
+    /* 오른쪽 식물 */
+
+
+    .main_back_img_right_wrap>img {
+        margin-top: 20%;
+        width: 250px;
+        height: 400px;
+    }
+
+    /* main_recommend_plant_title */
+
+    .main_recommend_plant_title {
+        font-size: 5rem;
+        line-height: 5rem;
+    }
+
+    .main_recommend_plant_subtitle {
+        font-size: 1rem;
+        margin: 10px 0px 50px 0px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    /* 왼쪽 식물 */
+
+    .main_back_img_left_wrap>img {
+        width: 170px;
+        height: 300px;
+    }
+
+    /* 가운데 식물 */
+    .main_back_img_center_wrap>img {
+        width: 30%;
+        height: 28%;
+    }
+
+    /* 오른쪽 식물 */
+
+
+    .main_back_img_right_wrap>img {
+        width: 170px;
+        height: 400px;
+    }
+
+    /* main_recommend_plant_title */
+
+    .main_recommend_plant_title {
+        font-size: 3rem;
+    }
+
+    .main_recommend_plant_subtitle {
+        font-size: 0.9rem;
+        margin: 0 20px 50px 20px;
+    }
+
+    /* 메인 식물 추천 버튼 */
+    .main_recommend_plant_button {
+        width: 170px;
+        height: 28px;
+
+    }
+
+    .main_recommend_plant_button .text,
+    .main_recommend_plant_button .icon-container {
+        font-size: 1rem;
+    }
+
+    .main_recommend_plant_button:hover .icon-container {
+        transform: translateX(70%);
+    }
 }

@@ -68,9 +68,57 @@
     height: 30px;
     background: url(../../../public/assets/header/header_search.png) no-repeat;
     background-size: 30px;
-    font: 400 0.9rem "Titillium Web", sans-serif;
 }
 
 .header_seach_bar_button:hover {
     cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {}
+
+@media screen and (max-width: 900px) {
+    .header_title {
+        font: bold 2rem/1.5rem "Titillium Web", sans-serif;
+    }
+
+    /* inner */
+    .header_seach_bar_inner {
+        width: 300px;
+        height: 38px;
+    }
+
+    .header_seach_bar_input {
+        width: 230px;
+        font-size: 1rem;
+    }
+
+    .header_seach_bar_button {
+        width: 30px;
+        height: 30px;
+        background: url(../../../public/assets/header/header_search.png) no-repeat;
+        background-size: 30px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header_title {
+        font: bold 1.5rem/1.5rem "Titillium Web", sans-serif;
+    }
+
+    /* inner */
+    .header_seach_bar_inner {
+        width: 250px;
+
+    }
+
+    .header_seach_bar_input {
+        width: 200px;
+    }
+
+    .header_seach_bar_button {
+        width: 25px;
+        height: 25px;
+        background: url(../../../public/assets/header/header_search.png) no-repeat;
+        background-size: 25px;
+    }
 }

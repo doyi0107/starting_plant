@@ -11,3 +11,9 @@
     color: rgb(58, 58, 58);
     font: 500 1.5rem "나눔 고딕", sans-serif;
 }
+
+@media screen and (max-width: 500px) {
+.footer_text {
+        font-size: 1.2rem;
+    }
+}
