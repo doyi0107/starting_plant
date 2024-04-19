@@ -5,9 +5,17 @@ import "../styles/Main.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
-import Card from "../components/Main_card";
+import PlantCard from "../components/Main_card";
 import axios from "axios";
-import SearchInput from "../components/Search_input"; // 올바른 경로로 수정해주세요
+import SearchInput from "../components/Search_input"; 
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+// Swiper React components와 필요한 모듈을 직접 가져옵니다.
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
+
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -100,64 +108,19 @@ export default function Main() {
     // };
   }, []); // 빈 의존성 배열을 전달하여 컴포넌트가 마운트될 때 한 번만 실행되도록 합니다.
 
-  const [apiData, setApiData] = useState([]);
-  const [dataArr, setDataArr] = useState([]);
-
-  let cardLen = 0;
-  const plantNames = [];
-  const plantFeatures = [];
-  const imageLink = [];
-  const productLink = [];
-  const [cardController, setCardController] = useState(4);
-
-      const renderplantCard = () => {
-        const result = [];
-        for (let i = 0; i < cardController; i++) {
-          result.push(
-            <Card
-              key={i}
-              plantNames={plantNames[i]}
-              plantFeatures={plantFeatures[i]}
-              imageLink={imageLink[i]}
-              productLink={productLink[i]}
-            />
-          );
-        }
-        return result;
-      };
-
-  // API
-  // const url = 'http://localhost:9090/plants/drjart';
-  const url = "/plants/drjart";
+  const [plants, setPlants] = useState(['커피나무','장미','튤립','벚나무','해바라기']);
 
   useEffect(() => {
-    const asyncDrjartGet = async () => {
-      try {
-        const response = await axios.get(url);
-        setApiData(response.data);
-      } catch (error) {
-        console.log("GET request XXXXXX - 식물정보!!");
-      }
-    };
-
-    asyncDrjartGet();
+    fetch("API_URL")
+      .then((response) => response.json())
+      .then((data) => setPlants(data.plants)) // 예제에서는 data.plants, 실제 구조에 따라 수정 필요
+      .catch((error) => console.error(error));
   }, []);
 
-  useEffect(() => {
-    setDataArr({ ...apiData });
-  }, [apiData]);
 
-  if (Array.isArray(dataArr.data)) {
-      dataArr.data.forEach((each) => {
-        plantNames.push(each.name);
-        plantFeatures.push(each.plantFeature);
-        imageLink.push(each.imageLink);
-        productLink.push(each.productLink);
-        cardLen++;
-      });
-  }
-  // reference:  https://stackoverflow.com/questions/50046841/proper-way-to-make-api-fetch-post-with-async-await
-  // reference:  https://codingbroker.tistory.com/123
+
+
+
   return (
     <div>
       <div className="main_wrap">
@@ -253,8 +216,35 @@ export default function Main() {
 
           <div className="main_search_plant_card">
             <div className="main_search_plant_card_wrap">
-              {/* 여기에 Card.js 컴포넌트!! */}
-              {renderplantCard()}
+              <Swiper
+                className="main_search_plant_swiper"
+                modules={[Autoplay, Pagination, Navigation]}
+                direction={"horizontal"} // or "horizontal"
+                loop={true}
+                speed={600}
+                spaceBetween={30}
+                slidesPerView={4}
+                simulateTouch={true} // 마우스로 드래그 가능하게 설정
+                grabCursor={true} // 마우스 커서 변경 설정
+                centeredSlides={false}
+                scrollbar={{ draggable: true }}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+              >
+                {plants.map((plant, index) => (
+                  <SwiperSlide key={index}>
+                    <PlantCard
+                      //  name={plant.name}
+                      name={plant}
+                      image={plant.image}
+                      type={plant.type}
+                      level={plant.level}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </div>

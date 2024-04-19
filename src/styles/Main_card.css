@@ -1,3 +1,11 @@
+/* 카드섹션 */
+
+.main_search_plant_card {
+    position: relative;
+    width: 100%;
+    height: 55%;
+}
+
 .main_search_plant_card_wrap {
     display: flex;
     justify-content: space-around;
@@ -6,8 +14,11 @@
     margin: 0 auto;
 }
 
+
+/* 카드 ui */
+
 .main_search_plant_card00 {
-    width: 20%;
+    width: 100%;
     height: 80%;
     background-color: rgb(230, 230, 230);
     border-radius: 15px;
@@ -18,18 +29,56 @@
     flex-direction: column;
 }
 
-.plant_img{
+/* swiper */
+.swiper {
+    width: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* plant 카드 */
+.plant_img {
     width: 90%;
     height: 50%;
     background-color: #bcc7a1;
     border-radius: 15px;
 }
-.plant_price {
-    font: bold 1.1rem "Titillium Web", sans-serif;
+
+
+.plant_name {
+    font: bold 1.8rem "Titillium Web", sans-serif;
     color: #8d9b6c;
 }
 
-.plant_name{
-    font: bold 1.8rem "Titillium Web", sans-serif;
-        color: #8d9b6c;
+@media screen and (max-width: 900px) {
+    .main_search_plant_card00 {
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /* 카드 ui */
+
+    .main_search_plant_card00 {
+        height: 30%;
+    }
+
+    /* plant 카드 */
+    .plant_img {
+        width: 90%;
+        height: 60%;
+        border-radius: 15px;
+    }
+
+    .plant_name {
+        font: bold 1rem "Titillium Web", sans-serif;
+    }
 }

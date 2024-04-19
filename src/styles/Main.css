@@ -198,13 +198,6 @@
 
 
 
-/* 카드섹션 */
-
-.main_search_plant_card {
-    position: relative;
-    width: 100%;
-    height: 55%;
-}
 
 @media screen and (max-width: 1200px) {
     /* 왼쪽 식물 */
