@@ -273,7 +273,7 @@
     /* 왼쪽 식물 */
 
     .main_back_img_left_wrap>img {
-        width: 170px;
+        width: 150px;
         height: 300px;
     }
 
@@ -287,7 +287,7 @@
 
 
     .main_back_img_right_wrap>img {
-        width: 170px;
+            width: 150px;
         height: 400px;
     }
 

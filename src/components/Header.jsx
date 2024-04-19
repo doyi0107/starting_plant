@@ -71,7 +71,7 @@ export default function Header() {
                 value={searchTerm}
                 onChange={(event) => setSearchTerm(event.target.value)}
                 className="header_seach_bar_input"
-                placeholder="찾고 싶은 식물을 입력해주세요."
+                placeholder="찾으시는 식물을 입력해주세요."
               ></input>
               <button
                 type="submit"
