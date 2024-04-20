@@ -199,6 +199,12 @@ button {
 }
 
 @media screen and (max-width: 1200px) {
+
+    p {
+        color: black;
+        /* 모바일 기기에서는 검정색으로 보이도록 설정 */
+    }
+
     .progress_bar_text {
         margin-top: -60px;
         font-size: 2.5rem;
@@ -279,9 +285,7 @@ button {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .survey_step_card02_wrap .survey_step_card,
-    .survey_step_card04_wrap .survey_step_card,
-    .survey_step_card06_wrap .survey_step_card {
+    .survey_step_card {
         height: 150px;
     }
 
