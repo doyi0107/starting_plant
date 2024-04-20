@@ -340,4 +340,18 @@ button {
         height: 150px;
     }
 
+
+    /* text */
+    .step1_level_text,
+    .step3_place_text,
+    .step4_price_text,
+    .step5_life_text,
+    .step6_height_text {
+        font-size: 0.9rem;
+    }
+
+    .survey_step_card02_wrap p {
+        font-size: 0.7rem;
+    }
+
 }
