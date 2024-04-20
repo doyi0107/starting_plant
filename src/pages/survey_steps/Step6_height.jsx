@@ -25,9 +25,9 @@ export default function Step6_height({ nextStep, updateUserData, prevStep, selec
   }, [selectedHeight]);
   return (
     <div>
-      <div className="step_box_wrap">
+      <div className="step_box_wrap step_box06_wrap">
         <h2 className="survey_step_title">얼마나 자라는 식물을 찾으시나요?</h2>
-        <div className="survey_step_card_wrap">
+        <div className="survey_step_card_wrap survey_step_card06_wrap">
           <button
             onClick={() => handleSelect("20_cm")}
             className={`survey_step_card ${

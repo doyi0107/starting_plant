@@ -24,10 +24,12 @@ export default function Step4_price({ nextStep, updateUserData, prevStep, select
     }, [selectedPrice]);
   return (
     <div>
-      <div className="step_box_wrap">
-        <h2 className="survey_step_title">어떤 가격대를 찾으시나요?
-        <p>1년 정도 자란 식물을 기준으로 매겼습니다.</p></h2>
-        <div className="survey_step_card_wrap">
+      <div className="step_box_wrap step_box04_wrap">
+        <h2 className="survey_step_title">
+          어떤 가격대를 찾으시나요?
+          <p>1년 정도 자란 식물을 기준으로 매겼습니다.</p>
+        </h2>
+        <div className="survey_step_card_wrap survey_step_card04_wrap">
           <button
             onClick={() => handleSelect("1_won")}
             className={`survey_step_card ${

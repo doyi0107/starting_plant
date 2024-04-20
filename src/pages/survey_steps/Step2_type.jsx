@@ -30,9 +30,9 @@ export default function Step2_type({
   }, [selectedType]);
   return (
     <div>
-      <div className="step_box_wrap">
+      <div className="step_box_wrap step_box02_wrap">
         <h2 className="survey_step_title">어떤 종류의 식물을 키우고 싶나요?</h2>
-        <div className="survey_step_card_wrap">
+        <div className="survey_step_card_wrap survey_step_card02_wrap">
           <button
             onClick={() => handleSelect("flower")}
             className={`survey_step_card ${

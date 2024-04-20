@@ -103,13 +103,14 @@ button {
 
 .step2_type_img,
 .step4_price_img,
-.step5_life_img,.step6_height_img {
-    width: 70%;
+.step5_life_img,
+.step6_height_img {
+    width: 80%;
     height: 60%;
 }
 
 .step2_type_foliage {
-    width: 90%;
+    width: 100%;
 }
 
 .step3_place_img,
@@ -120,11 +121,11 @@ button {
 /* text */
 .step1_level_text,
 .step3_place_text,
-.step4_price_text{
+.step4_price_text {
     font: bold 1.5rem "Titillium Web", sans-serif;
 }
 
-.step2_type_text{
+.step2_type_text {
     margin-top: 20px;
     font: bold 1.1rem "Titillium Web", sans-serif;
 }
@@ -157,7 +158,7 @@ button {
     font: 400 1.2rem "Titillium Web", sans-serif;
     color: black;
     transition: all 0.1s;
-    background-color:#a0af74; 
+    background-color: #a0af74;
     /* border: 3px solid  */
     border-radius: 20px;
     color: #fff;
@@ -170,14 +171,15 @@ button {
 
 /* result */
 
-.survey_result_wrap{
+.survey_result_wrap {
     position: relative;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 }
 
-.survey_result_inner{
+.survey_result_inner {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -186,12 +188,152 @@ button {
 }
 
 
-.survey_result_title{
+.survey_result_title {
     font: bold 2.8rem "Titillium Web", sans-serif;
 }
 
-.survey_result_card_wrap{
+.survey_result_card_wrap {
     width: 100%;
     height: 50vh;
     background-color: #8d9b6c;
+}
+
+@media screen and (max-width: 1200px) {
+    .progress_bar_text {
+        margin-top: -60px;
+        font-size: 2.5rem;
+    }
+
+    .survey_step_title {
+        font-size: 2.2rem;
+    }
+
+    .survey_step_title p {
+        font-size: 1rem;
+    }
+
+    /* step_box */
+
+    .step_box_wrap {
+        width: 90vw;
+        height: 50vh;
+    }
+
+    .survey_step_card {
+        border-radius: 30px;
+        margin: 0 10px;
+    }
+
+    .step2_type_text {
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+
+    /* text */
+    .step1_level_text,
+    .step3_place_text,
+    .step4_price_text {
+        font-size: 1.2rem;
+    }
+
+    .step5_life_text,
+    .step6_height_text {
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+
+    .prev_next_button_wrap button {
+        margin: 60px 0px;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+
+    /* 프로그레스바 */
+
+    .progress_bar_text {
+        margin-top: -60px;
+        font-size: 2rem;
+    }
+
+    .survey_step_title {
+        font-size: 1.8rem;
+    }
+
+    .survey_step_title p {
+        font-size: 0.8rem;
+    }
+
+    /* step_box */
+
+    .step_box_wrap {
+        width: 95vw;
+    }
+
+    .survey_step_card02_wrap,
+    .survey_step_card04_wrap,
+    .survey_step_card06_wrap {
+        display: grid;
+        grid-template-rows: repeat(2, 170px);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .survey_step_card02_wrap .survey_step_card,
+    .survey_step_card04_wrap .survey_step_card,
+    .survey_step_card06_wrap .survey_step_card {
+        height: 150px;
+    }
+
+    .survey_step_card {
+        margin: 0 10px;
+    }
+
+    /* 이미지 */
+    .step1_level_img,
+    .step3_place_img {
+        width: 80%;
+    }
+
+    .step2_type_foliage {
+        width: 100%;
+    }
+
+    /* 이전단계 다음 단계 */
+
+    .prev_next_button_wrap {
+        width: 250px;
+        height: 30px;
+    }
+
+    .prev_next_button_wrap button {
+        margin: 40px 0px;
+        width: 100px;
+        height: 45px;
+        font-size: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+
+
+    .survey_step_title {
+        font-size: 1.5rem;
+    }
+
+    .survey_step_title p {
+        font-size: 0.7rem;
+    }
+
+    .survey_step_card05_wrap {
+        display: grid;
+        grid-template-rows: repeat(2, 170px);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .survey_step_card05_wrap .survey_step_card {
+        height: 150px;
+    }
+
 }

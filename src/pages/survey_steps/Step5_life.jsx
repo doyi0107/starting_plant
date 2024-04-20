@@ -24,9 +24,11 @@ export default function Step5_life({ nextStep, updateUserData, prevStep, selecte
   }, [selectedLife]);
   return (
     <div>
-      <div className="step_box_wrap">
-        <h2 className="survey_step_title">원하는 식물의 수명이 어떻게 되나요?</h2>
-        <div className="survey_step_card_wrap">
+      <div className="step_box_wrap step_box05_wrap">
+        <h2 className="survey_step_title">
+          원하는 식물의 수명이 어떻게 되나요?
+        </h2>
+        <div className="survey_step_card_wrap survey_step_card05_wrap">
           <button
             onClick={() => handleSelect("1_year")}
             className={`survey_step_card ${
