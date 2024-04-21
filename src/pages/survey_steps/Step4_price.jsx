@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
 import "../../styles/common/all.css";
 import "../../styles/Survey.css";
 
 export default function Step4_price({ nextStep, updateUserData, prevStep, selectedPrice }) {
-  const [selectedPriceState, setSelectedPriceState] = useState(selectedPrice);
   const handleSelect = (price) => {
     updateUserData("price", price);
-    setSelectedPriceState(price);
   };
   const next = () => {
     if (!selectedPrice) {
@@ -18,10 +15,6 @@ export default function Step4_price({ nextStep, updateUserData, prevStep, select
     }
   };
 
-    useEffect(() => {
-      // 상위 컴포넌트로부터 받은 selectedPrice이 변경될 경우 로컬 상태 업데이트
-      setSelectedPriceState(selectedPrice);
-    }, [selectedPrice]);
   return (
     <div>
       <div className="step_box_wrap step_box04_wrap">
@@ -39,6 +32,7 @@ export default function Step4_price({ nextStep, updateUserData, prevStep, select
             <img
               className="step4_price_img step4_price_1_won"
               src="assets/survey/step4_1.png"
+              alt="만원 이하"
             ></img>
             <p className="step4_price_text">만원 이하</p>
           </button>
@@ -51,6 +45,7 @@ export default function Step4_price({ nextStep, updateUserData, prevStep, select
             <img
               className="step4_price_img step4_price_5_won"
               src="assets/survey/step4_5.png"
+              alt="오만원 이하"
             ></img>
             <p className="step4_price_text">오만원 이하</p>
           </button>
@@ -63,6 +58,7 @@ export default function Step4_price({ nextStep, updateUserData, prevStep, select
             <img
               className="step4_price_img step4_price_10_won"
               src="assets/survey/step4_10.png"
+              alt="십만원 이하"
             ></img>
             <p className="step4_price_text">십만원 이하</p>
           </button>
@@ -75,6 +71,7 @@ export default function Step4_price({ nextStep, updateUserData, prevStep, select
             <img
               className="step4_price_img step4_price_20_won"
               src="assets/survey/step4_20.png"
+              alt="이십만원 이하"
             ></img>
             <p className="step4_price_text">이십만원 이하</p>
           </button>
@@ -87,6 +84,7 @@ export default function Step4_price({ nextStep, updateUserData, prevStep, select
             <img
               className="step4_price_img step4_price_all"
               src="assets/survey/step_all.png"
+              alt="상관 없음"
             ></img>
             <p className="step4_price_text">상관 없음</p>
           </button>

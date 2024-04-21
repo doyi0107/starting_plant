@@ -4,6 +4,7 @@ import "../../styles/Survey.css";
 
 export default function Survey_result({ userData }) {
   const [recommendedPlants, setRecommendedPlants] = useState([]);
+  console.log(userData);
 
   useEffect(() => {
     const fetchPlants = async () => {
@@ -17,7 +18,9 @@ export default function Survey_result({ userData }) {
         if (!response.ok) {
           throw new Error("API 요청에 실패했습니다.");
         }
+
         const data = await response.json();
+        console.log(data);
 
         // 데이터 설정
         setRecommendedPlants(data.plants);
@@ -37,7 +40,12 @@ export default function Survey_result({ userData }) {
           <ul className="survey_result_card_wrap">
             {recommendedPlants.map((plant, index) => (
               <li key={index} className="survey_result_card">
-                {plant.name}
+                <p>{plant.imgUrl}</p>
+                <p className="survey_result_card_name">{plant.name}</p>
+                <div className="survey_result_card_sub">
+                  <p>#{plant.type}</p>
+                  <p>#{plant.level}</p>
+                </div>
               </li>
             ))}
           </ul>

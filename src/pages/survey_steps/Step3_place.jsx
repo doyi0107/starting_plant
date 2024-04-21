@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import "../../styles/common/all.css";
 import "../../styles/Survey.css";
 
@@ -8,10 +7,8 @@ export default function Step3_place({
   prevStep,
   selectedPlace,
 }) {
-  const [selectedPlaceState, setSelectedPlaceState] = useState(selectedPlace);
   const handleSelect = (place) => {
     updateUserData("place", place);
-    setSelectedPlaceState(place);
   };
 
   const next = () => {
@@ -24,10 +21,6 @@ export default function Step3_place({
     }
   };
 
-  useEffect(() => {
-    // 상위 컴포넌트로부터 받은 selectedPlace이 변경될 경우 로컬 상태 업데이트
-    setSelectedPlaceState(selectedPlace);
-  }, [selectedPlace]);
   return (
     <div>
       <div className="step_box_wrap">

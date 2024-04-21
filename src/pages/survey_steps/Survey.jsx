@@ -92,7 +92,7 @@ function Survey() {
           />
         );
       default:
-        return <Result />;
+        return <Result userData={userData} />;
     }
   };
 

@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "../styles/common/all.css";
 import "../styles/Main.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 import PlantCard from "../components/Main_card";
-import axios from "axios";
 import SearchInput from "../components/Search_input"; 
 import "swiper/css";
 import "swiper/css/pagination";

@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import "../../styles/common/all.css";
 import "../../styles/Survey.css";
 
@@ -8,26 +7,19 @@ export default function Step2_type({
   prevStep,
   selectedType,
 }) {
-  const [selectedTypeState, setSelectedTypeState] = useState(selectedType);
   const handleSelect = (type) => {
     updateUserData("type", type);
-    setSelectedTypeState(type);
   };
 
   const next = () => {
     if (!selectedType) {
-      // 선택된 레벨이 없을 때 알람을 띄움
       alert("다음 단계로 넘어가려면 선택지 중 하나를 골라주세요.");
     } else {
-      // 선택된 레벨이 있을 때 다음 단계로 이동
       nextStep();
     }
   };
 
-  useEffect(() => {
-    // 상위 컴포넌트로부터 받은 selectedType이 변경될 경우 로컬 상태 업데이트
-    setSelectedTypeState(selectedType);
-  }, [selectedType]);
+
   return (
     <div>
       <div className="step_box_wrap step_box02_wrap">
@@ -42,6 +34,7 @@ export default function Step2_type({
             <img
               className="step2_type_img step2_type_flower"
               src="assets/survey/step2_flower.png"
+              alt="꽃이 피는 식물"
             ></img>
             <p className="step2_type_text">꽃이 피는 식물</p>
             <p>예)장미,튤립</p>
@@ -55,6 +48,7 @@ export default function Step2_type({
             <img
               className="step2_type_img step2_type_tree"
               src="assets/survey/step2_tree.png"
+              alt="나무형 식물"
             ></img>
             <p className="step2_type_text">나무형 식물</p>
             <p>예)벚나무,단풍나무</p>
@@ -68,6 +62,7 @@ export default function Step2_type({
             <img
               className="step2_type_img step2_type_foliage"
               src="assets/survey/step2_foliage.png"
+              alt="관엽 식물"
             ></img>
             <p className="step2_type_text">관엽 식물</p>
             <p>예)몬스테라,스파티필름</p>
@@ -81,6 +76,7 @@ export default function Step2_type({
             <img
               className="step2_type_img step2_type_succulents"
               src="assets/survey/step2_succulents.png"
+              alt="다육 식물"
             ></img>
             <p className="step2_type_text">다육 식물</p>
             <p>예)선인장,자브라 식물</p>
@@ -94,6 +90,7 @@ export default function Step2_type({
             <img
               className="step2_type_img step2_type_herb"
               src="assets/survey/step2_herb.png"
+              alt="허브 식물"
             ></img>
             <p className="step2_type_text">허브 식물</p>
             <p>예)바질,로즈마리</p>
@@ -107,6 +104,7 @@ export default function Step2_type({
             <img
               className="step2_type_img step2_type_beginner"
               src="assets/survey/step_all.png"
+              alt="상관 없음"
             ></img>
             <p className="step2_type_text">상관 없음</p>
           </button>

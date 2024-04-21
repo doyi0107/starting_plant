@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
 import "../../styles/common/all.css";
 import "../../styles/Survey.css";
 
 export default function Step6_height({ nextStep, updateUserData, prevStep, selectedHeight }) {
-  const [selectedHeightState, setSelectedHeightState] = useState(selectedHeight);
   const handleSelect = (height) => {
     updateUserData("height", height);
-    setSelectedHeightState(height);
   };
 
   const next = () => {
@@ -19,10 +16,6 @@ export default function Step6_height({ nextStep, updateUserData, prevStep, selec
     }
   };
 
-  useEffect(() => {
-    // 상위 컴포넌트로부터 받은 selectedHeight이 변경될 경우 로컬 상태 업데이트
-    setSelectedHeightState(selectedHeight);
-  }, [selectedHeight]);
   return (
     <div>
       <div className="step_box_wrap step_box06_wrap">
@@ -37,6 +30,7 @@ export default function Step6_height({ nextStep, updateUserData, prevStep, selec
             <img
               className="step6_height_img step6_height_all"
               src="assets/survey/step6_grow.png"
+              alt="20cm 이하"
             ></img>
             <p className="step6_height_text">20cm 이하</p>
           </button>
@@ -49,6 +43,7 @@ export default function Step6_height({ nextStep, updateUserData, prevStep, selec
             <img
               className="step6_height_img step6_height_all"
               src="assets/survey/step6_grow.png"
+              alt="50cm 이하"
             ></img>
             <p className="step6_height_text">50cm 이하</p>
           </button>
@@ -61,6 +56,7 @@ export default function Step6_height({ nextStep, updateUserData, prevStep, selec
             <img
               className="step6_height_img step6_height_all"
               src="assets/survey/step6_grow.png"
+              alt="1m 이하"
             ></img>
             <p className="step6_height_text">1m 이하</p>
           </button>
@@ -73,6 +69,7 @@ export default function Step6_height({ nextStep, updateUserData, prevStep, selec
             <img
               className="step6_height_img step6_height_all"
               src="assets/survey/step6_grow.png"
+              alt="5m 이하"
             ></img>
             <p className="step6_height_text">5m 이하</p>
           </button>
@@ -85,6 +82,7 @@ export default function Step6_height({ nextStep, updateUserData, prevStep, selec
             <img
               className="step6_height_img step6_height_all"
               src="assets/survey/step_all.png"
+              alt="상관 없음"
             ></img>
             <p className="step6_height_text"> 상관 없음</p>
           </button>

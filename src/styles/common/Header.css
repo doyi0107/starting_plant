@@ -107,7 +107,7 @@
 
     /* inner */
     .header_seach_bar_inner {
-        width: 240px;
+        width: 220px;
         height: 36px;
     }
 
@@ -120,5 +120,9 @@
         height: 25px;
         background: url(../../../public/assets/header/header_search.png) no-repeat;
         background-size: 25px;
+    }
+
+    .header_seach_bar_input::placeholder {
+        font-size: 0.8rem;
     }
 }
