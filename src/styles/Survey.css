@@ -224,7 +224,12 @@ button {
 }
 
 .survey_result_card_sub p{
-    font: bold 1rem "Titillium Web", sans-serif;
+    font: 400 1rem "Titillium Web", sans-serif;
+}
+
+.survey_result_card_img{
+    width: 80%;
+    height: 50%;
 }
 
 @media screen and (max-width: 1200px) {

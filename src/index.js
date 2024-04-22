@@ -3,19 +3,22 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 
 
-async function deferRender(){
-    const { worker } = require("./mocks/browser");
-    worker.start();
+async function enableMocking() {
+  if (process.env.NODE_ENV !== "development") {
+    return;
+  }
+
+  const { worker } = await import("./mocks/browser");
+  return worker.start();
 }
 
-deferRender().then( () => {
-    const root = ReactDOM.createRoot(document.getElementById("root"));
-    root.render(
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    );
-
-})
+enableMocking().then(() => {
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+});
 
 

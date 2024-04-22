@@ -9,9 +9,18 @@ export default function Survey_result({ userData }) {
   useEffect(() => {
     const fetchPlants = async () => {
       try {
-        // API 요청을 보내기 위한 URL 구성
-        // 예시 URL입니다. 실제 URL로 대체해야 합니다.
-        const apiUrl = `https://api.example.com/plants?level=${userData.level}&type=${userData.type}&place=${userData.place}&price=${userData.price}&life=${userData.life}&height=${userData.height}`;
+  // 쿼리 파라미터를 조건에 따라 동적으로 추가합니다.
+      const queryParams = new URLSearchParams({
+        ...(userData.level && { level: userData.level }),
+        ...(userData.type && { type: userData.type }),
+        ...(userData.place && { place: userData.place }),
+        ...(userData.price && { price: userData.price }),
+        ...(userData.life && { life: userData.life }),
+        ...(userData.height && { height: userData.height }),
+      }).toString();
+
+      // API 요청을 보내기 위한 URL 구성
+      const apiUrl = `https://api.example.com/plants?${queryParams}`;
 
         // API 요청
         const response = await fetch(apiUrl);
@@ -40,7 +49,11 @@ export default function Survey_result({ userData }) {
           <ul className="survey_result_card_wrap">
             {recommendedPlants.map((plant, index) => (
               <li key={index} className="survey_result_card">
-                <p>{plant.imgUrl}</p>
+                <img
+                  className="survey_result_card_img"
+                  src={plant.imgUrl}
+                  alt={plant.name}
+                />
                 <p className="survey_result_card_name">{plant.name}</p>
                 <div className="survey_result_card_sub">
                   <p>#{plant.type}</p>
