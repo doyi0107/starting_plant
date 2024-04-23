@@ -2,25 +2,25 @@ import React, { useState, useEffect } from "react";
 import "../../styles/common/all.css";
 import "../../styles/Survey.css";
 
-export default function Survey_result({ userData }) {
+export default function Survey_result({ userData, resetSurvey }) {
   const [recommendedPlants, setRecommendedPlants] = useState([]);
   console.log(userData);
 
   useEffect(() => {
     const fetchPlants = async () => {
       try {
-  // 쿼리 파라미터를 조건에 따라 동적으로 추가합니다.
-      const queryParams = new URLSearchParams({
-        ...(userData.level && { level: userData.level }),
-        ...(userData.type && { type: userData.type }),
-        ...(userData.place && { place: userData.place }),
-        ...(userData.price && { price: userData.price }),
-        ...(userData.life && { life: userData.life }),
-        ...(userData.height && { height: userData.height }),
-      }).toString();
+        // 쿼리 파라미터를 조건에 따라 동적으로 추가합니다.
+        const queryParams = new URLSearchParams({
+          ...(userData.level && { level: userData.level }),
+          ...(userData.type && { type: userData.type }),
+          ...(userData.place && { place: userData.place }),
+          ...(userData.price && { price: userData.price }),
+          ...(userData.life && { life: userData.life }),
+          ...(userData.height && { height: userData.height }),
+        }).toString();
 
-      // API 요청을 보내기 위한 URL 구성
-      const apiUrl = `https://api.example.com/plants?${queryParams}`;
+        // API 요청을 보내기 위한 URL 구성
+        const apiUrl = `https://api.example.com/plants?${queryParams}`;
 
         // API 요청
         const response = await fetch(apiUrl);
@@ -65,6 +65,11 @@ export default function Survey_result({ userData }) {
         ) : (
           <p>추천할 식물이 없습니다. 조건을 변경해 보세요.</p>
         )}
+        <div className="survey_result_replay_button_wrap">
+          <button className="survey_result_replay_button" onClick={resetSurvey}>
+            다시 하기
+          </button>
+        </div>
       </div>
     </div>
   );

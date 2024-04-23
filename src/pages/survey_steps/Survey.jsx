@@ -35,7 +35,17 @@ function Survey() {
   const updateUserData = (key, value) => {
     setUserData({ ...userData, [key]: value });
   };
-
+  const resetSurvey = () => {
+    setStep(1);
+    setUserData({
+      level: "",
+      type: "",
+      place: "",
+      price: "",
+      life: "",
+      height: "",
+    });
+  };
   const renderStep = () => {
     switch (step) {
       case 1:
@@ -92,7 +102,7 @@ function Survey() {
           />
         );
       default:
-        return <Result userData={userData} />;
+        return <Result userData={userData} resetSurvey={resetSurvey} />;
     }
   };
 
