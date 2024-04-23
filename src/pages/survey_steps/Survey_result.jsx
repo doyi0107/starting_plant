@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/common/all.css";
-import "../../styles/Survey.css";
+import "../../styles/Survey_result.css";
 
 export default function Survey_result({ userData, resetSurvey }) {
   const [recommendedPlants, setRecommendedPlants] = useState([]);

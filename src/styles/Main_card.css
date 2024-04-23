@@ -45,7 +45,7 @@
 
 
 /* plant 카드 */
-.plant_img {
+.main_search_plant_img {
     width: 90%;
     height: 50%;
     background-color: #bcc7a1;
@@ -61,16 +61,21 @@
 .main_search_plant_feature {
     width: 160px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .main_search_plant_feature p {
     font: 400 1rem "Titillium Web", sans-serif;
+    margin: 0 8px;
 }
 
 @media screen and (max-width: 900px) {
     .main_search_plant_card00 {
         height: 50%;
+    }
+
+    .main_search_plant_name {
+        font-size: 1.4rem;
     }
 }
 
@@ -82,13 +87,22 @@
     }
 
     /* plant 카드 */
-    .plant_img {
+    .main_search_plant_img {
         width: 90%;
         height: 60%;
         border-radius: 15px;
     }
 
-    .plant_name {
-        font: bold 1rem "Titillium Web", sans-serif;
+    .main_search_plant_name {
+        font-size: 0.9rem;
+    }
+
+    .main_search_plant_feature {
+        width: 85px;
+    }
+
+    .main_search_plant_feature p {
+        font-size: 0.6rem;
+        margin: 0 3px;
     }
 }
