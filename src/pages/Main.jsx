@@ -106,10 +106,10 @@ export default function Main() {
     // };
   }, []); // 빈 의존성 배열을 전달하여 컴포넌트가 마운트될 때 한 번만 실행되도록 합니다.
 
-  const [plants, setPlants] = useState(['커피나무','장미','튤립','벚나무','해바라기']);
+  const [plants, setPlants] = useState([]);
 
   useEffect(() => {
-    fetch("API_URL")
+    fetch("https://api.example.com/plants")
       .then((response) => response.json())
       .then((data) => setPlants(data.plants)) // 예제에서는 data.plants, 실제 구조에 따라 수정 필요
       .catch((error) => console.error(error));
@@ -224,7 +224,7 @@ export default function Main() {
                 breakpoints={{
                   // 640px 이상일 때
                   300: {
-                    slidesPerView:3,
+                    slidesPerView: 3,
                   },
                   // 1024px 이상일 때
                   1024: {
@@ -244,8 +244,8 @@ export default function Main() {
                   <SwiperSlide key={index}>
                     <PlantCard
                       //  name={plant.name}
-                      name={plant}
-                      image={plant.image}
+                      name={plant.name}
+                      image={plant.imgUrl}
                       type={plant.type}
                       level={plant.level}
                     />

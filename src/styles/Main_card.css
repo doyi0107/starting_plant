@@ -53,11 +53,20 @@
 }
 
 
-.plant_name {
+.main_search_plant_name {
     font: bold 1.8rem "Titillium Web", sans-serif;
     color: #8d9b6c;
 }
 
+.main_search_plant_feature{
+        width: 160px;
+            display: flex;
+            justify-content: space-around;
+}
+
+.main_search_plant_feature p {
+    font: 400 1rem "Titillium Web", sans-serif;
+}
 @media screen and (max-width: 900px) {
     .main_search_plant_card00 {
         height: 50%;

@@ -110,7 +110,7 @@ export const handlers = [
         life: "all",
         height: "all",
         imgUrl:
-          "https://m.thever.kr/web/product/big/202306/c598853b45afd71bddd8f82bb4a76bd5.png",
+          "https://file.honestflower.kr/media/images/productimage/1649223866/%ED%99%8D%EC%BD%A9%EC%95%BC%EC%9E%90_10_large.webp",
       },
       {
         name: "장미",
@@ -143,7 +143,7 @@ export const handlers = [
         life: "all",
         height: "all",
         imgUrl:
-          "https://lh3.googleusercontent.com/proxy/74E297zfd64JdfQJkZeD6aBiODyLuohNpkw-3xeftNSXmmxgEL8z2_3zGDpmrwQb6_NCIdzwiJ7885GzJ9kyKLgVE4MT6sMM6ZPAxUXPDceQU7j6r_JMKpfZHw",
+          "https://maengsfarm.com/web/product/tiny/202312/33cce2491294989cfcf67aa0dbb3bb2d.jpg",
       },
       {
         name: "스투키",
