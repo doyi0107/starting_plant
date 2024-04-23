@@ -29,7 +29,7 @@ export const handlers = [
       {
         name: "커피나무",
         level: "Beginner",
-        type: "flower",
+        type: "tree",
         place: "all",
         price: "all",
         life: "all",
@@ -50,7 +50,7 @@ export const handlers = [
       {
         name: "산세베리아",
         level: "Beginner",
-        type: "flower",
+        type: "foliage",
         place: "all",
         price: "all",
         life: "all",
@@ -155,6 +155,29 @@ export const handlers = [
         height: "all",
         imgUrl:
           "https://th4.tmon.kr/thumbs/image/7aa/1b6/572/d17bc0981_700x700_95_FIT_1548838298.jpg",
+      },
+
+      {
+        name: "레몬나무",
+        level: "Expert",
+        type: "tree",
+        place: "indoor",
+        price: "all",
+        life: "all",
+        height: "all",
+        imgUrl:
+          "https://img.29cm.co.kr/next-product/2020/07/06/b9cde40449c04003a66093c5e4c1eb81_20200706165116.jpg?width=700",
+      },
+      {
+        name: "피쉬본",
+        level: "Beginner ",
+        type: "succulents",
+        place: "indoor",
+        price: "all",
+        life: "all",
+        height: "all",
+        imgUrl:
+          "https://www.housoop.com/data/goods/11/2023/05/194_temp_16836124329290view.jpg",
       },
       // 추가 식물 데이터를 여기에 넣을 수 있습니다.
     ];
