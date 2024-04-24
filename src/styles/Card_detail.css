@@ -19,7 +19,7 @@
 }
 
 
-/* 1 */
+/* 식물 이름 */
 .card_detail_plant_wrap {
     width: 100%;
     height: 15%;
@@ -56,7 +56,7 @@
 }
 
 .card_detail_plant_img_wrap {
-    height: 100%;
+    height: 90%;
     width: 50%;
     display: flex;
     justify-content: center;
@@ -156,23 +156,28 @@
 }
 
 @media screen and (max-width: 500px) {
+    .card_detail_wrap {
+        height: 1300px;
+    }
 
     .card_detail_plant_name {
         font-size: 1.5rem;
     }
 
     .card_detail_plant_sub {
-        width: 130px;
+        width: 120px;
     }
 
     .card_detail_plant_sub>p {
-        font: 400 1.1rem "Titillium Web", sans-serif;
+        font: 400  0.9rem "Titillium Web", sans-serif;
     }
 
-    .card_detail_plant_img_wrap {
-        height: 50%;
+    .card_detail_plant_img {
+        height: 230px;
     }
-
+    .card_detail_plant_intro_wrap{
+        margin-top: 20px;
+    }
     /* 식물 소개 */
     .card_detail_plant_intro_title {
         font-size: 1.2rem;
@@ -183,6 +188,6 @@
     }
 
     .card_detail_plant_bottom_inner>p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
