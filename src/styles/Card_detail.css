@@ -120,6 +120,11 @@
         height: 1400px;
     }
 
+    .card_detail {
+        width: 80vw;
+        height: 100%;
+    }
+
     /* 식물 이름 */
     .card_detail_plant_wrap {
         height: 120px;
@@ -148,9 +153,10 @@
         align-items: center;
     }
 
-                .card_detail_plant_img {
-                    height: 260px;
-                }
+    .card_detail_plant_img {
+        width: 85%;
+        height: 260px;
+    }
 
     .card_detail_plant_intro_wrap {
         width: 100%;
