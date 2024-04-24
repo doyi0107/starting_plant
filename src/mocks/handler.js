@@ -43,7 +43,8 @@ export const handlers = [
         imgUrl:
           "https://images.pexels.com/photos/170383/pexels-photo-170383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         temperature: 20,
-        explain: "//",
+        explain:
+          "커피나무는 커피콩을 생산하는 식물로, 열대 지역에서 자라는 상록수입니다. 실내에서 재배할 때는 밝은 간접광을 제공하고, 토양이 마르기 시작하면 충분히 물을 주어야 합니다. 커피나무는 습한 환경을 선호하며, 실내에서 꽃을 피우기는 어렵지만 잘 관리하면 열매를 맺을 수도 있습니다.",
       },
       {
         id: 2,
