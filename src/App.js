@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<Main />}></Route>
           <Route path="/recommend_plant" element={<RecommendPlant />}></Route>
           <Route path="/serach_results" element={<SearchResult />} />
-          <Route path="/detail/:plantName" element={<CardDetail />} />
+          <Route path="/card_detail/:plantId" element={<CardDetail />} />
         </Routes>
       </BrowserRouter>
       <Footer />

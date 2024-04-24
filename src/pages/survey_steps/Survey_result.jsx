@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // useNavigate 훅 추가
 import "../../styles/common/all.css";
 import "../../styles/Survey_result.css";
 
 export default function Survey_result({ userData, resetSurvey }) {
   const [recommendedPlants, setRecommendedPlants] = useState([]);
+  const navigate = useNavigate(); // useNavigate 훅 사용
   console.log(userData);
 
   useEffect(() => {
@@ -41,6 +43,12 @@ export default function Survey_result({ userData, resetSurvey }) {
 
     fetchPlants();
   }, [userData]); // userData가 변경될 때마다 이 useEffect를 다시 실행합니다.
+
+  // 식물 카드 클릭 핸들러
+  const handlePlantClick = (plantId) => {
+    navigate(`/card_detail/${plantId}`); // 식물 상세 페이지로 이동
+  };
+
   return (
     <div className="survey_result_wrap">
       <div className="survey_result_inner">
@@ -48,7 +56,11 @@ export default function Survey_result({ userData, resetSurvey }) {
         {recommendedPlants.length > 0 ? (
           <ul className="survey_result_card_wrap">
             {recommendedPlants.map((plant, index) => (
-              <li key={index} className="survey_result_card">
+              <li
+                key={index}
+                className="survey_result_card"
+                onClick={() => handlePlantClick(plant.id)}
+              >
                 <img
                   className="survey_result_card_img"
                   src={plant.imgUrl}

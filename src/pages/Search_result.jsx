@@ -20,7 +20,7 @@ function Search() {
 
   // 카드 클릭 핸들러 함수
   const handleCardClick = (plantName) => {
-    navigate(`/detail/Rose`);
+    navigate(`/card_detail/${plantName}`);
   };
 
   return (
@@ -47,7 +47,7 @@ function Search() {
                 <div
                   key={plant.id}
                   className="search_result_card"
-                  onClick={() => handleCardClick(plant.name)}
+                  onClick={() => handleCardClick(plant.id)}
                 >
                   <h2 className="search_result_plant_name">{plant.name}</h2>
                   <p className="search_result_plant_detail">

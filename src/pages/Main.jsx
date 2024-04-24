@@ -243,11 +243,11 @@ export default function Main() {
                 {plants.map((plant, index) => (
                   <SwiperSlide key={index}>
                     <PlantCard
-                      //  name={plant.name}
                       name={plant.name}
                       image={plant.imgUrl}
                       type={plant.type}
                       level={plant.level}
+                      plantId={plant.id}
                     />
                   </SwiperSlide>
                 ))}
