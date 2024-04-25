@@ -1,6 +1,6 @@
 .card_detail_wrap {
     width: 100%;
-    height: 150vh;
+    height: 1500px;
     background-color: #DCDCD9;
     display: flex;
     align-items: center;
@@ -35,7 +35,7 @@
 
 /* 2 */
 .card_detail_plant_back_color {
-    height: 80%;
+    height: 1200px;
     margin: 3% 0px;
     padding-top: 3%;
     background-color: #aebb8a;
@@ -50,7 +50,7 @@
     /* background-color: aqua; */
     display: flex;
     justify-content: space-between;
-    height: 50%;
+    /* height: 40%; */
     width: 90%;
 
 }
@@ -71,14 +71,15 @@
 }
 
 .card_detail_plant_sub {
-    width: 160px;
+    width: 200px;
     margin-top: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .card_detail_plant_sub>p {
     font: 400 1.2rem "Titillium Web", sans-serif;
+    margin: 0px 10px;
 }
 
 /* 2 - 1 - 2 */
@@ -87,17 +88,18 @@
 }
 
 .card_detail_plant_intro_title {
-    font: bold 2.3rem "Titillium Web", sans-serif;
+    font: bold 2rem "Titillium Web", sans-serif;
 }
 
 .card_detail_plant_intro_explain {
+    margin-top: 20px;
     width: 90%;
-    font: 400 1.1rem/40px "Titillium Web", sans-serif;
+    font: 400 1.1rem/35px "Titillium Web", sans-serif;
 }
 
 /* 2-2 */
 .card_detail_plant_bottom {
-    height: 50%;
+    height: 60%;
     width: 90%;
 }
 
@@ -149,7 +151,6 @@
 
     .card_detail_plant_img_wrap {
         width: 100%;
-        height: 60%;
         align-items: center;
     }
 
@@ -165,9 +166,11 @@
     /* 식물 소개 */
     .card_detail_plant_intro_title {
         font-size: 1.5rem;
+        margin: 10px 0px;
     }
 
     .card_detail_plant_intro_explain {
+        width: 100%;
         font: 400 1rem/30px "Titillium Web", sans-serif;
     }
 
@@ -177,12 +180,21 @@
 }
 
 @media screen and (max-width: 500px) {
+
+    .card_detail_wrap {
+        height: 1300px;
+    }
+
+    .card_detail_plant_back_color {
+        height: 1100px;
+    }
+
     .card_detail_plant_name {
         font-size: 1.5rem;
     }
 
     .card_detail_plant_sub {
-        width: 120px;
+        width: 100px;
     }
 
     .card_detail_plant_sub>p {
@@ -203,11 +215,12 @@
     }
 
     .card_detail_plant_intro_explain {
-        font: 400 0.9rem/30px "Titillium Web", sans-serif;
+        font: 400 0.9rem/25px "Titillium Web", sans-serif;
     }
 
     .card_detail_plant_bottom_inner>p {
         font-size: 0.9rem;
     }
 }
+
 /*  */

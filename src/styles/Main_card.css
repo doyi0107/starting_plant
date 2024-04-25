@@ -29,6 +29,10 @@
     flex-direction: column;
 }
 
+.main_search_plant_card00:hover{
+    cursor: pointer;
+}
+
 /* swiper */
 .swiper {
     width: 100%;
