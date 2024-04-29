@@ -11,7 +11,8 @@
 
 
 .search_result_bar_wrap {
-    height: 35%;
+    padding-top: 30px;
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +21,7 @@
 
 .search_result_explain {
     margin: 40px 0px;
+    font: bold 1.3rem "Titillium Web", sans-serif;
 }
 
 
@@ -74,6 +76,7 @@
 
 @media screen and (max-width: 900px) {
     .search_result_card {
+                margin-top: -100px;
         width: 35%;
         height: 50%;
     }
@@ -87,6 +90,7 @@
     /* 카드 ui */
 
     .search_result_card {
+
         width: 50%;
         height: 50%;
     }

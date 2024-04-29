@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import "../styles/Card_detail.css"
+import "../styles/Card_detail.css";
 
 function CardDetail() {
   let { plantId } = useParams();
@@ -23,7 +23,7 @@ function CardDetail() {
         return response.json();
       })
       .then((data) => {
-         setPlant(data.plants[plantId]);
+        setPlant(data.plants[plantId]);
         console.log(data);
         setIsLoading(false);
       })
@@ -33,7 +33,6 @@ function CardDetail() {
         setIsLoading(false);
       });
   }, [plantId]); // plantId이 변경될 때마다 이 effect를 다시 실행
-
 
   // 로딩 중 메시지
   if (isLoading) return <div className="card_detail_wrap">로딩 중...</div>;
@@ -79,12 +78,38 @@ function CardDetail() {
               {/* bottom */}
               <div className="card_detail_plant_bottom">
                 <div className="card_detail_plant_bottom_inner">
-                  <p>물 주는 방법</p>
-                  <p>온도 : {plant.temperature}도</p>
-                  <p>흙 종류</p>
-                  <p>햇빛</p>
-                  <p>환경</p>
-                  <p>주의 사항</p>
+                  <div className="card_detail_plant_info">
+                    <p className="card_detail_plant_info_title">물 주는 방법</p>
+                    <p className="card_detail_plant_info_sub"> {plant.water}</p>
+                  </div>
+                  <div className="card_detail_plant_info">
+                    <p className="card_detail_plant_info_title">온도 </p>
+                    <p className="card_detail_plant_info_sub">
+                      {plant.temperature}도
+                    </p>
+                  </div>
+                  <div className="card_detail_plant_info">
+                    <p className="card_detail_plant_info_title">흙 종류</p>
+                    <p className="card_detail_plant_info_sub">{plant.soil}</p>
+                  </div>
+                  <div className="card_detail_plant_info">
+                    <p className="card_detail_plant_info_title">햇빛 </p>
+                    <p className="card_detail_plant_info_sub">
+                      {plant.sunlight}
+                    </p>
+                  </div>
+                  <div className="card_detail_plant_info">
+                    <p className="card_detail_plant_info_title">환경</p>
+                    <p className="card_detail_plant_info_sub">
+                      {plant.environment}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="card_detail_plant_info_title">주의 사항 </p>
+                    <p className="card_detail_plant_info_sub">
+                      {plant.precautions}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

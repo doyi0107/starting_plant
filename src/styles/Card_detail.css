@@ -1,6 +1,6 @@
 .card_detail_wrap {
     width: 100%;
-    height: 1500px;
+    height: 1600px;
     background-color: #DCDCD9;
     display: flex;
     align-items: center;
@@ -22,7 +22,7 @@
 /* 식물 이름 */
 .card_detail_plant_wrap {
     width: 100%;
-    height: 15%;
+    height: 12%;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -47,6 +47,7 @@
 
 /* 2-1 */
 .card_detail_plant_top {
+    margin-top: 20px;
     /* background-color: aqua; */
     display: flex;
     justify-content: space-between;
@@ -99,12 +100,13 @@
 
 /* 2-2 */
 .card_detail_plant_bottom {
-    height: 60%;
+    height: 70%;
     width: 90%;
+    margin-bottom: 50px;
 }
 
 .card_detail_plant_bottom_inner {
-    height: 90%;
+    height: 100%;
     padding-top: 20px;
     display: flex;
     flex-direction: column;
@@ -112,14 +114,20 @@
 
 }
 
-.card_detail_plant_bottom_inner>p {
-    font: bold 1.1rem/40px "Titillium Web", sans-serif;
+
+
+.card_detail_plant_info_title {
+    font: bold 1.3rem/40px "Titillium Web", sans-serif;
+}
+
+.card_detail_plant_info_sub {
+    font: 400 1.1rem/40px "Titillium Web", sans-serif;
 }
 
 @media screen and (max-width: 900px) {
 
     .card_detail_wrap {
-        height: 1400px;
+        height: 1700px;
     }
 
     .card_detail {
@@ -138,7 +146,7 @@
     }
 
     .card_detail_plant_back_color {
-        height: 1200px;
+        height: 1500px;
         margin-top: 20px;
     }
 
@@ -178,16 +186,24 @@
     .card_detail_plant_bottom {
         width: 80%;
     }
+
+    .card_detail_plant_info_title {
+        font: bold 1.4rem/50px "Titillium Web", sans-serif;
+    }
+
+    .card_detail_plant_info_sub {
+        font: 400 1rem/30px "Titillium Web", sans-serif;
+    }
 }
 
 @media screen and (max-width: 500px) {
 
     .card_detail_wrap {
-        height: 1300px;
+        height: 1950px;
     }
 
     .card_detail_plant_back_color {
-        height: 1100px;
+        height: 1700px;
     }
 
     .card_detail_plant_name {
@@ -221,6 +237,14 @@
 
     .card_detail_plant_bottom_inner>p {
         font-size: 0.9rem;
+    }
+
+    .card_detail_plant_info_title {
+        font: bold 1.1rem/40px "Titillium Web", sans-serif;
+    }
+
+    .card_detail_plant_info_sub {
+        font: 400 0.9rem/30px "Titillium Web", sans-serif;
     }
 }
 
