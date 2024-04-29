@@ -85,7 +85,7 @@ function CardDetail() {
                   <div className="card_detail_plant_info">
                     <p className="card_detail_plant_info_title">온도 </p>
                     <p className="card_detail_plant_info_sub">
-                      {plant.temperature}도
+                      {plant.temperature}°C
                     </p>
                   </div>
                   <div className="card_detail_plant_info">
