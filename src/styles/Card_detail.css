@@ -152,6 +152,7 @@
     .card_detail_plant_img_wrap {
         width: 100%;
         align-items: center;
+        margin: 20px 0px;
     }
 
     .card_detail_plant_img {
@@ -165,7 +166,7 @@
 
     /* 식물 소개 */
     .card_detail_plant_intro_title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         margin: 10px 0px;
     }
 

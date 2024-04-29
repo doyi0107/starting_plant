@@ -30,11 +30,11 @@
 }
 
 .main_search_plant_form_wrap,
-.main_serach_button {
+.main_search_button {
     z-index: 9;
 }
 
-.main_serach_form_inner {
+.main_search_form_inner {
     width: 500px;
     height: 50px;
     background-color: transparent;
@@ -63,7 +63,7 @@
     font: 400 1.3rem "Titillium Web", sans-serif;
 }
 
-.main_serach_button {
+.main_search_button {
     width: 40px;
     height: 40px;
     background: url(../../public/assets/header/header_search.png) no-repeat;
@@ -71,11 +71,11 @@
     font: 400 1.3rem "Titillium Web", sans-serif;
 }
 
-.main_serach_button:hover {
+.main_search_button:hover {
     cursor: pointer;
 }
 
-/* .main_serach_button_img{
+/* .main_search_button_img{
     width: 100%;
     height: 100%;
     background-color: #6d7a4d;
@@ -102,7 +102,7 @@
         font-size: 2.1rem;
     }
 
-    .main_serach_form_inner {
+    .main_search_form_inner {
         width: 300px;
         height: 50px;
     }
@@ -117,7 +117,7 @@
         font-size: 1rem;
     }
 
-    .main_serach_button {
+    .main_search_button {
         width: 40px;
         height: 30px;
         background-size: 30px;

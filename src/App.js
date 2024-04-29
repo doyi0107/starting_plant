@@ -17,8 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />}></Route>
           <Route path="/recommend_plant" element={<RecommendPlant />}></Route>
-          <Route path="/serach_results" element={<SearchResult />} />
-          <Route path="/card_detail/:plantId" element={<CardDetail />} />
+          <Route path="/search_result" element={<SearchResult />}></Route>
+          <Route path="/card_detail/:plantId" element={<CardDetail />}></Route>
         </Routes>
       </BrowserRouter>
       <Footer />

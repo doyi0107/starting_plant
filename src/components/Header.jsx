@@ -11,6 +11,7 @@ export default function Header() {
 
   const handleSearchSubmit = async (event) => {
     event.preventDefault();
+
     if (!searchTerm) {
       alert("검색어를 입력해주세요.");
       return;
@@ -18,12 +19,14 @@ export default function Header() {
 
     try {
       const response = await axios.get(
-        `https://example.com/api/plants?query=${searchTerm}`
+        `https://api.example.com/plants?query=${searchTerm}`
       );
-      // 검색 결과를 '/results' 페이지로 전달하며 페이지 이동
-      navigate.push({
-        pathname: "/serach_results",
-        state: { plants: response.data },
+      const filteredPlants = response.data.plants.filter(
+        (plant) => plant.name === searchTerm
+      );
+      // 검색 결과 페이지로 이동
+      navigate("/search_result", {
+        state: { plants: filteredPlants, searchTerm: searchTerm },
       });
     } catch (error) {
       alert("검색 중 오류가 발생했습니다.", error);
