@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "../styles/Search_result.css";
@@ -7,18 +7,21 @@ import SearchInput from "../components/Search_input";
 function Search_result() {
   const location = useLocation();
   const navigate = useNavigate();
-  // useLocation에서 가져온 기본 검색 결과
-  const { plants: initialPlants, searchTerm: initialSearchTerm } =
-    location.state || {
+  // 로컬 상태로 검색 결과와 검색어 관리
+  const [plants, setPlants] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // location의 상태가 변경될 때마다 실행되는 useEffect
+  useEffect(() => {
+    // location.state에서 검색 결과와 검색어를 가져옴
+    const { plants: newPlants, searchTerm: newSearchTerm } = location.state || {
       plants: [],
       searchTerm: "",
     };
 
-     console.log(location.state);
-
-  // 로컬 상태로 검색 결과와 검색어 관리
-  const [plants, setPlants] = useState(initialPlants);
-  const [searchTerm, setSearchTerm] = useState(initialSearchTerm);
+    setPlants(newPlants);
+    setSearchTerm(newSearchTerm);
+  }, [location.state]); // location.state가 변경될 때마다 useEffect 실행
 
   // 카드 클릭 핸들러 함수
   const handleCardClick = (plantName) => {
@@ -36,10 +39,11 @@ function Search_result() {
                 : "받아온 데이터가 없습니다."}
             </div>
             <SearchInput
-             onSearch={(data, newSearchTerm) => { // newSearchTerm 인자 추가
-    setPlants(data);
-    setSearchTerm(newSearchTerm); // 새로운 검색어로 상태 업데이트
-  }}
+              onSearch={(data, newSearchTerm) => {
+                // newSearchTerm 인자 추가
+                setPlants(data);
+                setSearchTerm(newSearchTerm); // 새로운 검색어로 상태 업데이트
+              }}
             />
           </div>
           <div className="search_result_card_wrap">
@@ -50,10 +54,15 @@ function Search_result() {
                   className="search_result_card"
                   onClick={() => handleCardClick(plant.id)}
                 >
-                  <h2 className="search_result_plant_name">{plant.name}</h2>
-                  <p className="search_result_plant_detail">
-                    {plant.level}
-                  </p>
+                  <img
+                    className="search_result_plant_img"
+                    src={plant.imgUrl}
+                    alt={plant.name}
+                  />
+                  <div className="search_result_plant_name">{plant.name}</div>
+                  <div className="search_result_plant_feature">
+                    <p>#{plant.type}</p> <p>#{plant.level}</p>
+                  </div>
                 </div>
               ))
             ) : (

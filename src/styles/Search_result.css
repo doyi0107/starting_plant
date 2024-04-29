@@ -24,12 +24,90 @@
 
 
 .search_result_card_wrap {
-    background-color: #747474;
+    width: 90%;
+    margin: 0 auto;
     height: 60%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.search_result_card {}
+.search_result_card {
+    width: 25%;
+    height: 80%;
+    background-color: rgb(230, 230, 230);
+    border-radius: 15px;
+    /* box-shadow: 3px 10px 15px 3px #aaaaaa; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
 
+.search_result_card:hover{
+        cursor: pointer;
+}
+
+.search_result_plant_name {
+    font: bold 1.8rem "Titillium Web", sans-serif;
+    color: #8d9b6c;
+}
+
+.search_result_plant_img {
+    width: 90%;
+    height: 50%;
+    background-color: #bcc7a1;
+    border-radius: 15px;
+}
+
+.search_result_plant_feature {
+    width: 160px;
+    display: flex;
+    justify-content: center;
+}
+
+.search_result_plant_feature p {
+    width: 160px;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 900px) {
+    .search_result_card {
+        width: 35%;
+        height: 50%;
+    }
+
+    .search_result_plant_name {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /* 카드 ui */
+
+    .search_result_card {
+        width: 50%;
+        height: 50%;
+    }
+
+    /* plant 카드 */
+    .search_result_plant_img {
+        width: 90%;
+        height: 60%;
+        border-radius: 15px;
+    }
+
+    .search_result_plant_name {
+        font-size: 0.9rem;
+    }
+
+    .search_result_plant_feature {
+        width: 85px;
+    }
+
+    .search_result_plant_feature p {
+        font-size: 0.6rem;
+        margin: 0 3px;
+    }
+}
