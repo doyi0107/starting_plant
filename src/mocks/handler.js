@@ -1,5 +1,7 @@
 // src/mocks/handlers.js
 import { http, HttpResponse } from "msw";
+import axios from "axios";
+
 
 export const handlers = [
   http.get("https://api.example.com/plants", ({ request }) => {
@@ -378,7 +380,6 @@ export const handlers = [
       // 추가 식물 데이터를 여기에 넣을 수 있습니다.
     ];
 
-
     // 쿼리 파라미터에 따라 식물 데이터를 필터링
     const filteredPlants = plants.filter((plant) => {
       if (level && plant.level !== level) return false;
@@ -395,4 +396,6 @@ export const handlers = [
       plants: filteredPlants,
     });
   }),
+
+  
 ];

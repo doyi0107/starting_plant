@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/common/all.css";
 import { Link } from "react-router-dom";
+import GoogleLoginForm from "./Google_login";
 
 export default function Header() {
   // seaarch기능
@@ -61,6 +62,17 @@ export default function Header() {
   return (
     <div>
       <div className={`header_wrap ${isClosed ? "closed" : ""}`}>
+        <form className="header_seach_bar" onSubmit={handleSearchSubmit}>
+          <div className="header_seach_bar_inner">
+            <input
+              value={searchTerm}
+              onChange={(event) => setSearchTerm(event.target.value)}
+              className="header_seach_bar_input"
+              placeholder="찾으시는 식물을 입력해주세요."
+            ></input>
+            <button type="submit" className="header_seach_bar_button"></button>
+          </div>
+        </form>
         <div className="header_inner">
           <div className="header_title_wrap">
             <Link to="/" className="header_title">
@@ -68,20 +80,8 @@ export default function Header() {
             </Link>
           </div>
           {/* <p className="header_main">식물 추천</p> */}
-          <form className="header_seach_bar" onSubmit={handleSearchSubmit}>
-            <div className="header_seach_bar_inner">
-              <input
-                value={searchTerm}
-                onChange={(event) => setSearchTerm(event.target.value)}
-                className="header_seach_bar_input"
-                placeholder="찾으시는 식물을 입력해주세요."
-              ></input>
-              <button
-                type="submit"
-                className="header_seach_bar_button"
-              ></button>
-            </div>
-          </form>
+
+          <GoogleLoginForm style={{ width: "200px", height: "40px" }} />
         </div>
       </div>
     </div>
