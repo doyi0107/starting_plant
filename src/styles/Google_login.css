@@ -30,9 +30,18 @@
 .google_login_after_wrap p {
     color: #8d9b6c;
     font: bold 1.1rem "Titillium Web", sans-serif;
-    margin: 0 10px;
+    margin: 0 5px;
+}
+
+.google_login_after_wrap span{
+    color: #8d9b6c;
+    margin-bottom: 5px;
 }
 
 .google_login_after_name {
     text-align: center;
+}
+
+.google_logout:hover{
+     cursor: pointer;
 }

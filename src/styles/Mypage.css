@@ -1,0 +1,121 @@
+.mypage_wrap {
+    background-color: #DCDCD9;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.mypage_bottom_back {
+    position: absolute;
+    bottom: 0;
+    height: 45%;
+    width: 100%;
+    border-top-left-radius: 150px;
+    /* 왼쪽 상단 모서리 */
+    border-top-right-radius: 150px;
+    /* 오른쪽 상단 모서리 */
+    background-color: #8d9b6c;
+}
+
+.mypage_profile_wrap {
+    position: absolute;
+    top: 20px;
+    height: 45%;
+    width: 70%;
+    padding: 20px;
+    /* background-color: #d8f0a1; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* .mypage_profile_photo_wrap {
+    width: 30%;
+} */
+
+
+.mypage_profile_input_custom {
+    position: absolute;
+    top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #b3b3b3;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 3rem;
+    width: 200px;
+    height: 200px;
+}
+
+.mypage_profile_input_custom:hover {
+    background-color: #0056b3;
+}
+
+.file-name {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.mypage_profile_photo {
+    position: absolute;
+    top: 100px;
+    z-index: 2;
+    width: 200px;
+    /* 원하는 크기에 맞게 조절 */
+    height: 200px;
+    object-fit: cover;
+    /* 사진 비율 유지 */
+    border-radius: 50%;
+    /* 원형으로 표시 */
+}
+
+
+.mypage_profile_text_wrap {
+    width: fit-content;
+}
+
+.mypage_profile_text_wrap p {
+    color: #8d9b6c;
+    font: bold 1.8em "Titillium Web", sans-serif;
+}
+
+
+/* 마이페이지 하단 */
+
+.mypage_bottom_text_wrap {
+    width: 70%;
+    margin: 20px auto;
+}
+
+.mypage_bottom_name,
+.mypage_bottom_nickname {
+    display: flex;
+}
+
+.mypage_bottom_text_wrap>div {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mypage_bottom_text_wrap p {
+    margin-right: 10px;
+    color: #ffffff;
+    font: bold 1.8em "Titillium Web", sans-serif;
+}
+
+.mypage_bottom_text_wrap span {
+    width: 85%;
+    height: 2px;
+    background-color: #fff;
+}
+
+.mypage_bottom_value{
+    font: bold 1.8em "Titillium Web", sans-serif;
+}
