@@ -13,9 +13,6 @@ export default function Mypage() {
       const photoURL = URL.createObjectURL(file);
       setPhoto(photoURL);
 
-      // 선택된 파일 이름을 표시
-      const fileNameDisplay = document.getElementById("file-name");
-      fileNameDisplay.textContent = file ? file.name : "선택된 파일 없음";
   };
 
 
@@ -35,7 +32,7 @@ export default function Mypage() {
             />
           </label>
           <div id="file-name" className="file-name">
-            선택된 파일 없음
+            {/* 선택된 파일 없음 */}
           </div>
           {photo && (
             <img src={photo} alt="Profile" className="mypage_profile_photo" />
