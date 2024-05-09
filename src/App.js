@@ -5,6 +5,7 @@ import Main from "./pages/Main";
 import SearchResult from "./pages/Search_result";
 import RecommendPlant from "./pages/survey_steps/Survey";
 import CardDetail from "./pages/Card_detail";
+import Mypage from "./pages/Mypage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/recommend_plant" element={<RecommendPlant />}></Route>
           <Route path="/search_result" element={<SearchResult />}></Route>
           <Route path="/card_detail/:plantId" element={<CardDetail />}></Route>
+          <Route path="/Mypage" element={<Mypage />}></Route>
         </Routes>
       </BrowserRouter>
       <Footer />

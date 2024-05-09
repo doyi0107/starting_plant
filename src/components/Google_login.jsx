@@ -3,6 +3,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import axios from "axios";
 import { useGoogleLogin } from "@react-oauth/google";
 import "../styles/Google_login.css";
+import { Link } from "react-router-dom";
 
 
 
@@ -25,15 +26,18 @@ const GoogleLoginButton = () => {
     // flow: 'implicit', // implicit is the default
   });
   return (
-    <div onClick={() => signIn()}>
+    <div>
       {userName ? (
         // 사용자 이름이 설정된 경우 이름을 표시합니다.
         <div className="google_login_after_wrap">
-          <div className="google_login_after_name">{userName}</div>
+          <p className="google_login_after_name">반갑습니다 {userName}님</p>
+          <Link to="/Mypage" className="google_login_after_mypage_link">
+            <p className="google_login_after_mypage">마이페이지</p>
+          </Link>
         </div>
       ) : (
         // 사용자 이름이 설정되지 않은 경우 로그인 이미지를 표시합니다.
-        <div className="googlg_login_before_wrap">
+        <div className="googlg_login_before_wrap" onClick={() => signIn()}>
           <p className="googlg_login_text">로그인</p>
           <img
             src="assets/header/login_logo.png"

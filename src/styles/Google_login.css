@@ -1,4 +1,4 @@
-.googlg_login_before_wrap{
+.googlg_login_before_wrap {
     display: flex;
     width: 130px;
     height: 40px;
@@ -8,27 +8,31 @@
     border-radius: 20px;
 }
 
-.googlg_login_before_wrap:hover{
+.googlg_login_before_wrap:hover {
     cursor: pointer;
 }
 
-.googlg_login_text{
+.googlg_login_text {
     font: 500 1.1rem "Titillium Web", sans-serif;
     color: #8d9b6c;
 }
 
-.google_login_after_wrap{
-    background-color: #8d9b6c;
+.google_login_after_wrap {
+    /* background-color: #8d9b6c; */
     border-radius: 50px;
-    width: 45px;
+    width: fit-content;
     height: 45px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.google_login_after_name{
+.google_login_after_wrap p {
+    color: #8d9b6c;
+    font: bold 1.1rem "Titillium Web", sans-serif;
+    margin: 0 10px;
+}
+
+.google_login_after_name {
     text-align: center;
-    font: bold 0.9rem "Titillium Web", sans-serif;
-        color: #ffffff;
 }
