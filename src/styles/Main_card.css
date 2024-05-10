@@ -21,7 +21,7 @@
     width: 90%;
     margin: 0 auto;
     height: 80%;
-    background-color: #a1b172;
+    background-color: #8d9b6c;
     border-radius: 15px;
     box-shadow: 3px 10px 15px 3px #c4c9b2;
     display: flex;
@@ -67,7 +67,7 @@
 
 
 .main_search_plant_name {
-        color: #dae2c7;
+    color: #dae2c7;
     font: bold 1.7rem "Titillium Web", sans-serif;
 
 }
