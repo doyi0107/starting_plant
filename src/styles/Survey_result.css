@@ -33,7 +33,7 @@
     width: 20%;
     height: 90%;
     margin: 0 20px;
-    background-color: rgb(230, 230, 230);
+background-color: #8d9b6c;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -43,7 +43,7 @@
 
 .survey_result_card_name {
     font: bold 1.8rem "Titillium Web", sans-serif;
-    color: #8d9b6c;
+    color: rgb(240, 210, 111);
 }
 
 .survey_result_card_sub {
@@ -55,6 +55,7 @@
 .survey_result_card_sub p {
     font: 400 1rem "Titillium Web", sans-serif;
     margin: 0 8px;
+        color: rgb(240, 210, 111);
 }
 
 .survey_result_card_img {
@@ -85,7 +86,7 @@
 
 .survey_result_replay_button:hover {
     cursor: pointer;
-    color: #4d4d4d;
+    color: rgb(240, 210, 111);
 }
 
 @media screen and (max-width: 1200px) {

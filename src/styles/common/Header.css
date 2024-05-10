@@ -88,8 +88,9 @@
 
     /* inner */
     .header_seach_bar_inner {
-        width: 300px;
-        height: 38px;
+            display: none;
+        /* width: 300px;
+        height: 38px; */
     }
 
     .header_seach_bar_input {
@@ -112,8 +113,9 @@
 
     /* inner */
     .header_seach_bar_inner {
-        width: 220px;
-        height: 36px;
+    
+        /* width: 220px;
+        height: 36px; */
     }
 
     .header_seach_bar_input {

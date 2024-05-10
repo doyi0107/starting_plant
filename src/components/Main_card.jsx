@@ -15,11 +15,13 @@ function Card({ name, image, type, level, plantId }) {
       className="main_search_plant_card01 main_search_plant_card00 "
       onClick={() => handlePlantClick(plantId)} // 수정된 부분
     >
-      <img className="main_search_plant_img" src={image} alt={name} />
-      <div className="main_search_plant_name">{name}</div>
+      <div className="main_search_plant_card00_inner">
+        <img className="main_search_plant_img" src={image} alt={name} />
+        <div className="main_search_plant_name">{name}</div>
 
-      <div className="main_search_plant_feature">
-        <p>#{type}</p> <p>#{level}</p>
+        <div className="main_search_plant_feature">
+          <p>#{type}</p> <p>#{level}</p>
+        </div>
       </div>
     </div>
   );

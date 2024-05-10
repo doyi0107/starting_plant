@@ -79,33 +79,53 @@ function CardDetail() {
               <div className="card_detail_plant_bottom">
                 <div className="card_detail_plant_bottom_inner">
                   <div className="card_detail_plant_info">
-                    <p className="card_detail_plant_info_title">물 주는 방법</p>
+                    <div className="card_detail_plant_span_wrap">
+                      <p className="card_detail_plant_info_title">
+                        물 주는 방법
+                      </p>
+                      <span className="card_detail_plant_info_span"></span>
+                    </div>
                     <p className="card_detail_plant_info_sub"> {plant.water}</p>
                   </div>
                   <div className="card_detail_plant_info">
-                    <p className="card_detail_plant_info_title">온도 </p>
+                    <div className="card_detail_plant_span_wrap">
+                      <p className="card_detail_plant_info_title">온도 </p>
+                      <span className="card_detail_plant_info_span"></span>
+                    </div>
                     <p className="card_detail_plant_info_sub">
                       {plant.temperature}°C
                     </p>
                   </div>
                   <div className="card_detail_plant_info">
-                    <p className="card_detail_plant_info_title">흙 종류</p>
+                    <div className="card_detail_plant_span_wrap">
+                      <p className="card_detail_plant_info_title">흙 종류</p>
+                      <span className="card_detail_plant_info_span"></span>
+                    </div>
                     <p className="card_detail_plant_info_sub">{plant.soil}</p>
                   </div>
                   <div className="card_detail_plant_info">
-                    <p className="card_detail_plant_info_title">햇빛 </p>
+                    <div className="card_detail_plant_span_wrap">
+                      <p className="card_detail_plant_info_title">햇빛 </p>
+                      <span className="card_detail_plant_info_span"></span>
+                    </div>
                     <p className="card_detail_plant_info_sub">
                       {plant.sunlight}
                     </p>
                   </div>
                   <div className="card_detail_plant_info">
-                    <p className="card_detail_plant_info_title">환경</p>
+                    <div className="card_detail_plant_span_wrap">
+                      <p className="card_detail_plant_info_title">환경</p>
+                      <span className="card_detail_plant_info_span"></span>
+                    </div>
                     <p className="card_detail_plant_info_sub">
                       {plant.environment}
                     </p>
                   </div>
                   <div>
-                    <p className="card_detail_plant_info_title">주의 사항 </p>
+                    <div className="card_detail_plant_span_wrap">
+                      <p className="card_detail_plant_info_title">주의 사항 </p>
+                      <span className="card_detail_plant_info_span"></span>
+                    </div>
                     <p className="card_detail_plant_info_sub">
                       {plant.precautions}
                     </p>

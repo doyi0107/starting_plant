@@ -33,15 +33,42 @@
     margin: 0 5px;
 }
 
-.google_login_after_wrap span{
+.google_login_after_wrap span {
     color: #8d9b6c;
     margin-bottom: 5px;
 }
 
 .google_login_after_name {
-    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    margin: 0 5px;
 }
 
-.google_logout:hover{
-     cursor: pointer;
+.google_logout:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+
+    .googlg_login_text {
+        font: 500 1rem "Titillium Web", sans-serif;
+    }
+
+    .google_login_after_wrap {
+        width: 200px;
+    }
+
+    .google_login_after_wrap p {
+        text-align: center;
+        font: 500 1rem "Titillium Web", sans-serif;
+        margin: 0 0px;
+    }
+
+    .google_login_after_name {
+        width: 35px;
+        height: 35px;
+    }
+
+
 }

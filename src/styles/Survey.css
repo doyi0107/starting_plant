@@ -166,7 +166,7 @@ button {
 
 .prev_next_button_wrap button:hover {
     cursor: pointer;
-    color: #4d4d4d;
+    color: rgb(240, 210, 111);
 }
 
 
