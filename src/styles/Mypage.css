@@ -301,6 +301,9 @@
 }
 
 @media screen and (max-width: 500px) {
+    .mypage_wrap {
+            height: 120vh;
+        }
 
 
     .mypage_bottom_text_wrap p {

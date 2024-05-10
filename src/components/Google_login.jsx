@@ -6,8 +6,6 @@ import "../styles/Google_login.css";
 import { Link, useNavigate } from "react-router-dom"; // useNavigate 추가
 import { useAuth } from "../context/AuthContext";
 
-
-
 const GoogleLoginButton = () => {
   // 컴포넌트 내부
   const { setCurrentUser } = useAuth();
@@ -34,14 +32,12 @@ const GoogleLoginButton = () => {
       };
       // 로컬 스토리지 및 AuthContext에 사용자 정보 저장
       localStorage.setItem("currentUser", JSON.stringify(mypage_userInfo));
-      
+
       setCurrentUser(mypage_userInfo);
       console.log(userInfo);
     },
     // flow: 'implicit', // implicit is the default
   });
-
-
 
   // 로그아웃 버튼 클릭 이벤트 핸들러
   const handleLogout = () => {
@@ -97,4 +93,3 @@ function Login() {
 }
 
 export default Login;
-
