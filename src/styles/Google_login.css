@@ -29,8 +29,8 @@
 
 .google_login_after_wrap p {
     color: #8d9b6c;
-    font: bold 1.1rem "Titillium Web", sans-serif;
-    margin: 0 5px;
+    font: 500 1.1rem "Titillium Web", sans-serif;
+    margin: 0 6px;
 }
 
 .google_login_after_wrap span {
@@ -42,7 +42,7 @@
     width: 40px;
     height: 40px;
     border-radius: 30px;
-    margin: 0 5px;
+    margin-left: 10px;
 }
 
 .google_logout:hover {

@@ -35,11 +35,11 @@
 }
 
 .search_result_card {
-    width: 25%;
+    width: 23%;
     height: 80%;
-    background-color: rgb(230, 230, 230);
+    background-color: #8d9b6c;
+    box-shadow: 3px 10px 15px 3px #c4c9b2;
     border-radius: 15px;
-    /* box-shadow: 3px 10px 15px 3px #aaaaaa; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -51,15 +51,15 @@
 }
 
 .search_result_plant_name {
-    font: bold 1.8rem "Titillium Web", sans-serif;
-    color: #8d9b6c;
+    font: bold 1.7rem "Titillium Web", sans-serif;
+    color: #dae2c7;
 }
 
 .search_result_plant_img {
     width: 90%;
     height: 50%;
     background-color: #bcc7a1;
-    border-radius: 15px;
+    /* border-radius: 15px; */
 }
 
 .search_result_plant_feature {
@@ -72,6 +72,8 @@
     width: 160px;
     display: flex;
     justify-content: center;
+    color: #f5de8b;
+    font: 400 1.2rem "Titillium Web", sans-serif;
 }
 
 @media screen and (max-width: 900px) {

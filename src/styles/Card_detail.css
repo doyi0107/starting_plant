@@ -133,8 +133,8 @@
     flex: 1;
     display: block;
     /* width: 88%; */
-    height: 1px;
-    background-color: #dae2c7;
+    height: 2px;
+    background-color: rgba(218, 226, 199, 0.5);
 }
 
 
