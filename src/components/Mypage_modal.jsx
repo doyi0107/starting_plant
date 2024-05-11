@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/Mypage_modal.css"
 
 // props를 통해 필요한 상태와 함수를 받습니다.
 export default function Mypage_modal({

@@ -1,12 +1,13 @@
 .mypage_wrap {
     background-color: #DCDCD9;
     width: 100%;
-    /* min-height: 100vh; */
+    min-height: 100vh;
     position: relative;
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 
@@ -14,19 +15,19 @@
 .mypage_profile_wrap {
     position: relative;
     top: 20px;
-    min-height: 45vh;
+    min-height: 50vh;
     width: 70%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.mypage_profile_photo_wrap {}
+.mypage_profile_photo_wrap {
+    position: relative;
+}
 
 
 .mypage_profile_input_custom {
-    position: absolute;
-    top: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,7 +51,7 @@
 
 .mypage_profile_photo {
     position: absolute;
-    top: 30%;
+    top: 0px;
     z-index: 2;
     width: 200px;
     height: 200px;
@@ -60,7 +61,6 @@
 
 
 .mypage_profile_text_wrap {
-    /* height: 200px; */
     width: fit-content;
     display: flex;
     align-items: center;
@@ -74,7 +74,9 @@
 
 .photo_change_modal_button {
     position: absolute;
-    bottom: 55px;
+    top: 70%;
+    right: 50%;
+    transform: translateX(-100%);
     background-color: #f7f7f7;
     border-radius: 50%;
     width: 55px;
@@ -100,7 +102,7 @@
 .mypage_bottom_back {
     position: relative;
     bottom: 0;
-    min-height: 45%;
+    min-height: 65vh;
     width: 100%;
     border-top-left-radius: 150px;
     border-top-right-radius: 150px;
@@ -214,38 +216,25 @@
 
 
 
+
 @media screen and (max-width: 900px) {
     .mypage_profile_wrap {
-        /* position: absolute; */
-        top: 20px;
-        height: 500px;
-        justify-content: space-around;
+        top: 0px;
+        height: 400px;
+        justify-content: center;
         flex-direction: column;
     }
 
-    .mypage_profile_input_custom {
-        left: 50%;
-        transform: translateX(-50%);
-        top: 20%;
-    }
-
-
-    .mypage_profile_photo {
-        left: 50%;
-        transform: translateX(-50%);
-        top: 20%;
-    }
-
     .photo_change_modal_button {
-        position: absolute;
-        top: 50%;
-        right: 50%;
-        transform: translateX(-100%);
+        top: 60%;
+        left: 0%;
+        transform: translateX(-30%);
         width: 50px;
         height: 50px;
     }
 
     .mypage_profile_text_wrap p {
+        margin-top: 50px;
         font: bold 1.5em "Titillium Web", sans-serif;
     }
 

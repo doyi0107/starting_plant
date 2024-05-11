@@ -82,23 +82,7 @@
             color: #ffffff;
             font: 500 0.9em "Titillium Web", sans-serif;
         }
+
+
     
-        .photo_change_modal_button {
-            position: absolute;
-            top: 50%;
-            left: 40%;
-            transform: translateX(-100%);
-            width: 50px;
-            height: 50px;
-        }
-    
-        .photo_change_modal_button:hover {
-            cursor: pointer;
-        }
-    
-        .photo_change_button_img {
-            width: 30px;
-            height: 30px;
-    
-        }
 }
