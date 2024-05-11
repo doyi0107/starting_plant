@@ -1,0 +1,104 @@
+/* 모달 */
+.Photo_modal {
+    background-color: rgba(107, 122, 72, 0.9);
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 400px;
+    height: 200px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    /* padding 추가 */
+}
+
+.Photo_modal_content {
+    width: 98%;
+    height: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    border: 4px solid rgba(245, 209, 90, 0.8);
+    /* border 추가 */
+    border-radius: 20px;
+    /* 내부 요소에도 border-radius를 적용하여 모서리를 둥글게 만듭니다. */
+}
+
+.close_wrap {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close,
+.Photo_modal_ask {
+    color: #ffffff;
+    font: 500 1.2em "Titillium Web", sans-serif;
+}
+
+.modal_ask {
+    margin-top: -30px;
+}
+
+.Photo_modal_button_wrap {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.Photo_modal_button {
+    color: #ffffff;
+    font: 500 1.1em "Titillium Web", sans-serif;
+}
+
+.close,
+.Photo_modal_button {
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 900px) {
+    /* 모달 */
+        .Photo_modal {
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            width: 310px;
+            height: 150px;
+            padding: 20px;
+            /* padding 추가 */
+        }
+    
+        .close,
+        .Photo_modal_ask {
+            font: 500 1em "Titillium Web", sans-serif;
+        }
+    
+    
+        .Photo_modal_button {
+            color: #ffffff;
+            font: 500 0.9em "Titillium Web", sans-serif;
+        }
+    
+        .photo_change_modal_button {
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            transform: translateX(-100%);
+            width: 50px;
+            height: 50px;
+        }
+    
+        .photo_change_modal_button:hover {
+            cursor: pointer;
+        }
+    
+        .photo_change_button_img {
+            width: 30px;
+            height: 30px;
+    
+        }
+}

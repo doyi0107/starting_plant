@@ -1,29 +1,20 @@
 .mypage_wrap {
     background-color: #DCDCD9;
     width: 100%;
-    height: 100vh;
+    /* min-height: 100vh; */
     position: relative;
     align-items: center;
     justify-content: center;
     display: flex;
+    flex-direction: column;
 }
 
-.mypage_bottom_back {
-    position: absolute;
-    bottom: 0;
-    height: 45%;
-    width: 100%;
-    border-top-left-radius: 150px;
-    /* 왼쪽 상단 모서리 */
-    border-top-right-radius: 150px;
-    /* 오른쪽 상단 모서리 */
-    background-color: #8d9b6c;
-}
+
 
 .mypage_profile_wrap {
-    position: absolute;
+    position: relative;
     top: 20px;
-    height: 45%;
+    min-height: 45vh;
     width: 70%;
     display: flex;
     justify-content: space-around;
@@ -104,69 +95,17 @@
 
 }
 
-/* 모달 */
-.Photo_modal {
-    background-color: rgba(107, 122, 72, 0.9);
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    width: 400px;
-    height: 200px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    /* padding 추가 */
-}
-
-.Photo_modal_content {
-    width: 98%;
-    height: 98%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    border: 4px solid rgba(245, 209, 90, 0.8);
-    /* border 추가 */
-    border-radius: 20px;
-    /* 내부 요소에도 border-radius를 적용하여 모서리를 둥글게 만듭니다. */
-}
-
-.close_wrap {
-    width: 90%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.close,
-.Photo_modal_ask {
-    color: #ffffff;
-    font: 500 1.2em "Titillium Web", sans-serif;
-}
-
-.modal_ask {
-    margin-top: -30px;
-}
-
-.Photo_modal_button_wrap {
-    display: flex;
-    margin-bottom: 10px;
-}
-
-.Photo_modal_button {
-    color: #ffffff;
-    font: 500 1.1em "Titillium Web", sans-serif;
-}
-
-.close,
-.Photo_modal_button {
-    cursor: pointer;
-}
-
 /* 마이페이지 하단 */
+
+.mypage_bottom_back {
+    position: relative;
+    bottom: 0;
+    min-height: 45%;
+    width: 100%;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    background-color: #8d9b6c;
+}
 
 .mypage_bottom_text_wrap {
     width: 70%;
@@ -183,7 +122,7 @@
 }
 
 .mypage_bottom_text_wrap>div {
-    height: 60px;
+    min-height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -202,11 +141,80 @@
 }
 
 .mypage_bottom_value {
-        color: #f5de8b;
+    color: #f5de8b;
     font: bold 1.4em "Titillium Web", sans-serif;
 }
 
-@media screen and (max-width: 900px) {
+/* plant 카드 */
+
+.mypage_cart_wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+        /* 4개의 열을 생성하고, 각 열의 너비를 사용 가능한 공간에 따라 동등하게 분배 */
+    gap: 20px;
+    /* 카드 사이의 간격 설정 */
+    padding: 10px;
+    max-height: 60vh;
+    /* 최대 높이 설정 */
+    overflow-x: auto;
+    /* 세로 스크롤바가 내용이 넘칠 때 생성 */
+}
+
+.mypage_cart_inner {
+    width: 100%;
+    height: 300px;
+    aspect-ratio: 1 / 1;
+    background-color: #a6b47b;
+    border-radius: 15px;
+    box-shadow: 3px 10px 5px 3px #a7b185;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0;
+}
+
+.mypage_cart_img {
+    width: 90%;
+    height: 60%;
+    background-color: #bcc7a1;
+}
+
+
+.mypage_cart_name {
+    color: #dae2c7;
+    font: bold 1.5em "Titillium Web", sans-serif;
+
+}
+
+.mypage_cart_feature {
+    width: 160px;
+    display: flex;
+    justify-content: center;
+}
+
+.mypage_cart_feature p {
+    font: 400 1.2rem "Titillium Web", sans-serif;
+    margin: 0 8px;
+    color: #f5de8b;
+}
+
+.mypage_cart_delete_button {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    font: 400 1.2rem "Titillium Web", sans-serif;
+        color: #f5de8b;
+}
+
+.mypage_cart_cart_button:hover {
+    cursor: pointer;
+}
+
+
+
+/* @media screen and (max-width: 900px) {
     .mypage_profile_wrap {
         position: absolute;
         top: 20px;
@@ -232,48 +240,10 @@
         font: bold 1.5em "Titillium Web", sans-serif;
     }
 
-  /* 모달 */
-  .Photo_modal {
-      transform: translate(-50%, -50%);
-      z-index: 10;
-      width: 310px;
-      height: 150px;
-      padding: 20px;
-      /* padding 추가 */
-  }
-.close,
-.Photo_modal_ask {
-    font: 500 1em "Titillium Web", sans-serif;
-}
-
-
-.Photo_modal_button {
-    color: #ffffff;
-    font: 500 0.9em "Titillium Web", sans-serif;
-}
-
-    .photo_change_modal_button {
-        position: absolute;
-        top: 50%;
-        left: 40%;
-        transform: translateX(-100%);
-        width: 50px;
-        height: 50px;
-    }
-
-    .photo_change_modal_button:hover {
-        cursor: pointer;
-    }
-
-    .photo_change_button_img {
-        width: 30px;
-        height: 30px;
-
-    }
 
 
 
-    /* 마이페이지 하단 */
+
 
     .mypage_bottom_text_wrap>div {
         height: 50px;
@@ -302,8 +272,8 @@
 
 @media screen and (max-width: 500px) {
     .mypage_wrap {
-            height: 120vh;
-        }
+        height: 120vh;
+    }
 
 
     .mypage_bottom_text_wrap p {
@@ -319,4 +289,4 @@
     }
 
 
-}
+} */

@@ -49,10 +49,8 @@
 /* 2-1 */
 .card_detail_plant_top {
     margin-top: 20px;
-    /* background-color: aqua; */
     display: flex;
     justify-content: space-between;
-    /* height: 40%; */
     width: 90%;
 
 }
@@ -132,7 +130,6 @@
 .card_detail_plant_info_span {
     flex: 1;
     display: block;
-    /* width: 88%; */
     height: 2px;
     background-color: rgba(218, 226, 199, 0.5);
 }
@@ -224,11 +221,11 @@
 @media screen and (max-width: 500px) {
 
     .card_detail_wrap {
-        height: 1950px;
+        height: 2100px;
     }
 
     .card_detail_plant_back_color {
-        height: 1700px;
+        height: 1900px;
     }
 
     .card_detail_plant_name {

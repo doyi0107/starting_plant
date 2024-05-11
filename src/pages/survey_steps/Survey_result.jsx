@@ -2,10 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // useNavigate 훅 추가
 import "../../styles/common/all.css";
 import "../../styles/Survey_result.css";
+import useAddToCart from "../../components/UseAddToCart"; // 커스텀 훅 import
+import { useRecoilState } from "recoil";
+import { cartState } from "../../components/atoms"; // 상태를 import
 
-export default function Survey_result({ userData, resetSurvey }) {
+export default function Survey_result({
+  userData,
+  resetSurvey,
+
+}) {
   const [recommendedPlants, setRecommendedPlants] = useState([]);
   const navigate = useNavigate(); // useNavigate 훅 사용
+  const addToCart = useAddToCart(); // 커스텀 훅 사용
+  const [cart, setCart] = useRecoilState(cartState); // Recoil 상태 사용
   console.log(userData);
 
   useEffect(() => {
@@ -49,6 +58,11 @@ export default function Survey_result({ userData, resetSurvey }) {
     navigate(`/card_detail/${plantId}`); // 식물 상세 페이지로 이동
   };
 
+  // 장바구니 상태를 로컬 스토리지에 저장하는 함수
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]); // cart 상태가 변경될 때마다 실행됩니다.
+
   return (
     <div className="survey_result_wrap">
       <div className="survey_result_inner">
@@ -71,6 +85,22 @@ export default function Survey_result({ userData, resetSurvey }) {
                   <p>#{plant.type}</p>
                   <p>#{plant.level}</p>
                 </div>
+                <button className="main_search_plant_cart_button">
+                  <img
+                    onClick={(e) => {
+                      e.stopPropagation();
+                     addToCart(
+                       plant.id,
+                       plant.name,
+                       plant.imgUrl,
+                       plant.type,
+                       plant.level
+                     );
+                    }}
+                    className="main_search_plant_cart_img"
+                    src="assets/Card/card_shopping_cart.png"
+                  />
+                </button>
               </li>
             ))}
           </ul>

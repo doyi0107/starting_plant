@@ -3,6 +3,9 @@ import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "../styles/Search_result.css";
 import SearchInput from "../components/Search_input";
+import { useRecoilState } from "recoil";
+import { cartState } from "../components/atoms"; // 상태를 import
+import useAddToCart from "../components/UseAddToCart"; // 커스텀 훅 import
 
 function Search_result() {
   const location = useLocation();
@@ -10,6 +13,8 @@ function Search_result() {
   // 로컬 상태로 검색 결과와 검색어 관리
   const [plants, setPlants] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [cart, setCart] = useRecoilState(cartState); // Recoil 상태 사용
+  const addToCart = useAddToCart(); // 커스텀 훅 사용
 
   // location의 상태가 변경될 때마다 실행되는 useEffect
   useEffect(() => {
@@ -63,6 +68,22 @@ function Search_result() {
                   <div className="search_result_plant_feature">
                     <p>#{plant.type}</p> <p>#{plant.level}</p>
                   </div>
+                  <button className="main_search_plant_cart_button">
+                    <img
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        addToCart(
+                          plant.id,
+                          plant.name,
+                          plant.imgUrl,
+                          plant.type,
+                          plant.level
+                        );
+                      }}
+                      className="main_search_plant_cart_img"
+                      src="assets/Card/card_shopping_cart.png"
+                    />
+                  </button>
                 </div>
               ))
             ) : (

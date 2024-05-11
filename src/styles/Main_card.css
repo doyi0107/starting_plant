@@ -62,7 +62,6 @@
     width: 90%;
     height: 67%;
     background-color: #bcc7a1;
-    /* border-radius: 15px; */
 }
 
 
@@ -83,6 +82,23 @@
     margin: 0 8px;
     color: #f5de8b;
 }
+
+.main_search_plant_cart_button{
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main_search_plant_cart_img{
+    width: 28px;
+    height: 28px;
+}
+
+.main_search_plant_cart_img:hover {
+    cursor: pointer;
+}
+
+
 
 @media screen and (max-width: 900px) {
     .main_search_plant_card00 {
@@ -105,7 +121,6 @@
     .main_search_plant_img {
         width: 90%;
         height: 60%;
-        /* border-radius: 15px; */
     }
 
     .main_search_plant_name {

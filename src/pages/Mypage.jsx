@@ -1,12 +1,17 @@
 import React, { useState, useEffect, useRef } from "react"; // useState를 추가로 import합니다.
 import "../styles/Mypage.css";
 import { useAuth } from "../context/AuthContext";
+import PhotoOptionsModal from "../components/Mypage_modal"
+import { useRecoilState } from "recoil"; 
+import { cartState } from "../components/atoms";
 
 export default function Mypage() {
   const { currentUser } = useAuth();
   const inputRef = useRef();
   const [photo, setPhoto] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [cart, setCart] = useRecoilState(cartState); // useRecoilValue 대신 useRecoilState를 사용하여 cart 상태도 업데이트할 수 있게 합니다.
+
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -25,6 +30,14 @@ export default function Mypage() {
       reader.readAsDataURL(file);
     }
   };
+
+  // 컴포넌트가 마운트될 때 로컬 스토리지에서 장바구니 상태를 불러오는 함수
+  useEffect(() => {
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+      setCart(JSON.parse(savedCart));
+    }
+  }, []); // 의존성 배열을 빈 배열로 설정하여 컴포넌트가 마운트될 때만 실행됩니다.
 
   useEffect(() => {
     // 컴포넌트가 마운트될 때 로컬 스토리지에서 사진 URL을 가져와 상태를 업데이트합니다.
@@ -55,33 +68,6 @@ export default function Mypage() {
     inputRef.current.click(); // 파일 입력을 위해 input 클릭
     setShowModal(false); // 모달을 닫습니다
   };
-
-  const PhotoOptionsModal = () => (
-    <div
-      className="Photo_modal"
-      style={{ display: showModal ? "block" : "none" }}
-    >
-      <div className="Photo_modal_content">
-        <div className="close_wrap">
-          <span className="close" onClick={toggleModal}>
-            &times;
-          </span>
-        </div>
-        <p className="Photo_modal_ask">사진을 삭제하거나 변경하시겠습니까?</p>
-        <div className="Photo_modal_button_wrap">
-          <button className="Photo_modal_button" onClick={removePhoto}>
-            사진 삭제
-          </button>
-          <button
-            className="Photo_modal_button"
-            onClick={changePhoto} // 수정된 부분
-          >
-            사진 변경
-          </button>
-        </div>
-      </div>
-    </div>
-  );
 
   return (
     <div className="mypage_wrap">
@@ -116,7 +102,15 @@ export default function Mypage() {
             />
           </button>
         </div>
-        {showModal && <PhotoOptionsModal />} {/* 모달을 조건부 렌더링합니다. */}
+        {showModal && (
+          <PhotoOptionsModal
+            showModal={showModal}
+            toggleModal={toggleModal}
+            removePhoto={removePhoto}
+            changePhoto={changePhoto}
+          />
+        )}
+        {/* 모달을 조건부 렌더링합니다. */}
         {currentUser && (
           <div className="mypage_profile_text_wrap">
             <p>반갑습니다.{currentUser.name}님🤗</p>
@@ -137,6 +131,28 @@ export default function Mypage() {
               <span></span>
             </div>
             <div className="mypage_bottom_value">{currentUser.email}</div>
+            <div className="mypage_bottom_basket">
+              <p>장바구니</p>
+              <span></span>
+            </div>
+            <div className="mypage_cart_wrap">
+              {cart.map((item) => (
+                <div className="mypage_cart_inner">
+                  <img
+                    className="mypage_cart_img mypage_cart_img"
+                    src={item.image}
+                    alt={item.name}
+                  />
+                  <div className="mypage_cart_name" key={item.plantId}>
+                    {item.name}
+                  </div>
+                  <div className="mypage_cart_feature">
+                    <p>#{item.type}</p> <p>#{item.level}</p>
+                  </div>
+                  <button className="mypage_cart_delete_button">x</button>
+                </div> // 장바구니 아이템 출력
+              ))}
+            </div>
             {/* 기타 사용자 정보 출력 */}
           </div>
         )}
