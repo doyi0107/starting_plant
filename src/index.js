@@ -5,7 +5,7 @@ import App from './App';
 
 async function enableMocking() {
 // 배포할때는 === 로 바꾸기 
-  if (process.env.NODE_ENV !== "development") {
+  if (process.env.NODE_ENV === "development") {
     return;
   }
 
