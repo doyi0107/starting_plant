@@ -83,13 +83,13 @@
     color: #f5de8b;
 }
 
-.main_search_plant_cart_button{
+.main_search_plant_cart_button {
     width: 90%;
     display: flex;
     justify-content: flex-end;
 }
 
-.main_search_plant_cart_img{
+.main_search_plant_cart_img {
     width: 28px;
     height: 28px;
 }
@@ -108,6 +108,22 @@
     .main_search_plant_name {
         font-size: 1.4rem;
     }
+
+    /* plant 카드 */
+    .main_search_plant_img {
+        width: 90%;
+        height: 55%;
+    }
+
+    .main_search_plant_feature p {
+        font-size: 1.1rem;
+        margin: 0 8px;
+    }
+
+    .main_search_plant_cart_img {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -120,11 +136,11 @@
     /* plant 카드 */
     .main_search_plant_img {
         width: 90%;
-        height: 60%;
+        height: 50%;
     }
 
     .main_search_plant_name {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .main_search_plant_feature {
@@ -133,7 +149,12 @@
     }
 
     .main_search_plant_feature p {
-        font-size: 0.6rem;
+        font-size: 0.5rem;
         margin: 0 3px;
+    }
+
+    .main_search_plant_cart_img {
+        width: 13px;
+        height: 13px;
     }
 }

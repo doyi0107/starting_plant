@@ -151,7 +151,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(8, 1fr);
-        /* 4개의 열을 생성하고, 각 열의 너비를 사용 가능한 공간에 따라 동등하게 분배 */
+    /* 4개의 열을 생성하고, 각 열의 너비를 사용 가능한 공간에 따라 동등하게 분배 */
     gap: 20px;
     /* 카드 사이의 간격 설정 */
     padding: 10px;
@@ -205,7 +205,7 @@
     display: flex;
     justify-content: flex-end;
     font: 400 1.2rem "Titillium Web", sans-serif;
-        color: #f5de8b;
+    color: #f5de8b;
 }
 
 .mypage_cart_cart_button:hover {
@@ -214,9 +214,9 @@
 
 
 
-/* @media screen and (max-width: 900px) {
+@media screen and (max-width: 900px) {
     .mypage_profile_wrap {
-        position: absolute;
+        /* position: absolute; */
         top: 20px;
         height: 500px;
         justify-content: space-around;
@@ -236,14 +236,18 @@
         top: 20%;
     }
 
+    .photo_change_modal_button {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translateX(-100%);
+        width: 50px;
+        height: 50px;
+    }
+
     .mypage_profile_text_wrap p {
         font: bold 1.5em "Titillium Web", sans-serif;
     }
-
-
-
-
-
 
     .mypage_bottom_text_wrap>div {
         height: 50px;
@@ -271,13 +275,16 @@
 }
 
 @media screen and (max-width: 500px) {
-    .mypage_wrap {
-        height: 120vh;
+
+
+    .photo_change_button_img {
+        width: 30px;
+        height: 30px;
+
     }
 
-
     .mypage_bottom_text_wrap p {
-        font: 500 1.3em "Titillium Web", sans-serif;
+        font-size: 1.3rem;
     }
 
     .mypage_bottom_text_wrap span {
@@ -285,8 +292,8 @@
     }
 
     .mypage_bottom_value {
-        font: 500 1.1em "Titillium Web", sans-serif;
+        font-size: 1.1rem;
     }
 
 
-} */
+}
