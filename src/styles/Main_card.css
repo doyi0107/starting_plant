@@ -60,12 +60,13 @@
 /* plant 카드 */
 .main_search_plant_img {
     width: 90%;
-    height: 67%;
+    height: 65%;
     background-color: #bcc7a1;
 }
 
 
 .main_search_plant_name {
+    margin-top: 5px;
     color: #dae2c7;
     font: bold 1.7rem "Titillium Web", sans-serif;
 

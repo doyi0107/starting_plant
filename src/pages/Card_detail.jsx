@@ -1,6 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../styles/Card_detail.css";
+import useAddToCart from "../components/UseAddToCart"; // 커스텀 훅 import
+import { useRecoilState } from "recoil";
+import { cartState } from "../components/atoms"; // 상태를 import
 
 function CardDetail() {
   let { plantId } = useParams();
@@ -9,6 +12,8 @@ function CardDetail() {
   const [plant, setPlant] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const addToCart = useAddToCart(); // 커스텀 훅 사용
+  const [cart, setCart] = useRecoilState(cartState); // Recoil 상태 사용
 
   // 식물 데이터를 가져오는 함수
   useEffect(() => {
@@ -64,8 +69,26 @@ function CardDetail() {
                     alt={plant.name}
                   />
                   <div className="card_detail_plant_sub">
-                    <p>#{plant.type}</p>
-                    <p>#{plant.level}</p>
+                    <div>
+                      <p>#{plant.type}</p>
+                      <p>#{plant.level}</p>
+                    </div>
+                    <button className="main_search_plant_cart_button">
+                      <img
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          addToCart(
+                            plant.id,
+                            plant.name,
+                            plant.imgUrl,
+                            plant.type,
+                            plant.level
+                          );
+                        }}
+                        className="card_detail_cart_img"
+                        src="/assets/Card/card_shopping_cart.png"
+                      />
+                    </button>
                   </div>
                 </div>
                 <div className="card_detail_plant_intro_wrap">

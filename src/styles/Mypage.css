@@ -10,8 +10,6 @@
     overflow: hidden;
 }
 
-
-
 .mypage_profile_wrap {
     position: relative;
     top: 20px;
@@ -147,46 +145,49 @@
     font: bold 1.4em "Titillium Web", sans-serif;
 }
 
-/* plant 카드 */
+/* 장바구니 plant 카드 */
 
 .mypage_cart_wrap {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    /* 4개의 열을 생성하고, 각 열의 너비를 사용 가능한 공간에 따라 동등하게 분배 */
-    gap: 20px;
-    /* 카드 사이의 간격 설정 */
-    padding: 10px;
-    max-height: 60vh;
-    /* 최대 높이 설정 */
-    overflow-x: auto;
-    /* 세로 스크롤바가 내용이 넘칠 때 생성 */
+    min-height: 60vh;
+    overflow-y: auto;
 }
 
 .mypage_cart_inner {
+    width: 90%;
+    max-height: 50vh;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px 30px;
+}
+
+.mypage_cart_card_wrap {
     width: 100%;
-    height: 300px;
-    aspect-ratio: 1 / 1;
-    background-color: #a6b47b;
+    height: 250px;
+    background-color: #afbd87;
     border-radius: 15px;
-    box-shadow: 3px 10px 5px 3px #a7b185;
+    box-shadow: 3px 3px 3px 3px #9ba777;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     margin: 0;
 }
 
+.mypage_cart_card_wrap:hover {
+    cursor: pointer;
+}
+
 .mypage_cart_img {
-    width: 90%;
-    height: 60%;
-    background-color: #bcc7a1;
+    width: 80%;
+    height: 50%;
 }
 
 
 .mypage_cart_name {
-    color: #dae2c7;
-    font: bold 1.5em "Titillium Web", sans-serif;
+    margin: 5px 0px;
+    color: #e6ecd9;
+    font: bold 1.2em "Titillium Web", sans-serif;
 
 }
 
@@ -197,24 +198,23 @@
 }
 
 .mypage_cart_feature p {
-    font: 400 1.2rem "Titillium Web", sans-serif;
+    font: 400 1rem "Titillium Web", sans-serif;
     margin: 0 8px;
     color: #f5de8b;
 }
 
 .mypage_cart_delete_button {
     width: 90%;
+    height: 25px;
     display: flex;
     justify-content: flex-end;
-    font: 400 1.2rem "Titillium Web", sans-serif;
+    font: 400 2rem "Titillium Web", sans-serif;
     color: #f5de8b;
 }
 
-.mypage_cart_cart_button:hover {
+.mypage_cart_delete_button:hover {
     cursor: pointer;
 }
-
-
 
 
 @media screen and (max-width: 900px) {
@@ -238,10 +238,6 @@
         font: bold 1.5em "Titillium Web", sans-serif;
     }
 
-    .mypage_bottom_text_wrap>div {
-        height: 50px;
-    }
-
     .mypage_bottom_name {
         margin-top: 50px;
     }
@@ -260,6 +256,27 @@
         font: 500 1.3em "Titillium Web", sans-serif;
     }
 
+    /* 장바구니 plant 카드 */
+
+    .mypage_cart_inner {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .mypage_cart_name {
+        font-size: 1.1rem
+    }
+
+    .mypage_cart_feature {
+        width: 160px;
+    }
+
+    .mypage_cart_feature p {
+        font-size: 0.9rem
+    }
+
+    .mypage_cart_delete_button {
+        font-size: 1.5rem;
+    }
 
 }
 
@@ -284,5 +301,45 @@
         font-size: 1.1rem;
     }
 
+    /* 장바구니 plant 카드 */
+    .mypage_cart_wrap {
+        width: 100%;
+    }
+
+    .mypage_cart_inner {
+        width: 100%;
+        max-height: 30vh;
+        margin: 30px auto;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 0px;
+    }
+
+    .mypage_cart_card_wrap {
+        width: 100px;
+        height: 150px;
+    }
+
+    .mypage_cart_img {
+        width: 70%;
+        height: 50%;
+    }
+
+    .mypage_cart_name {
+        margin: 5px 0px 0px 0px;
+        font-size: 0.6rem
+    }
+
+    .mypage_cart_feature {
+        width: 90%;
+    }
+
+    .mypage_cart_feature p {
+        font-size: 0.6rem;
+        margin: 0 3px;
+    }
+
+    .mypage_cart_delete_button {
+        font-size: 1.2rem;
+    }
 
 }

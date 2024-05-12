@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from "react"; // useState를 추가로 import합니다.
+import React, { useState, useEffect, useRef } from "react"; 
 import "../styles/Mypage.css";
 import { useAuth } from "../context/AuthContext";
 import PhotoOptionsModal from "../components/Mypage_modal"
 import { useRecoilState } from "recoil"; 
 import { cartState } from "../components/atoms";
+import { useNavigate } from "react-router-dom"; 
 
 export default function Mypage() {
   const { currentUser } = useAuth();
@@ -11,7 +12,7 @@ export default function Mypage() {
   const [photo, setPhoto] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [cart, setCart] = useRecoilState(cartState); // useRecoilValue 대신 useRecoilState를 사용하여 cart 상태도 업데이트할 수 있게 합니다.
-
+  const navigate = useNavigate(); 
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -67,6 +68,34 @@ export default function Mypage() {
   const changePhoto = () => {
     inputRef.current.click(); // 파일 입력을 위해 input 클릭
     setShowModal(false); // 모달을 닫습니다
+  };
+
+  const removeFromCart = (event, plantId, name) => {
+    event.stopPropagation(); // 이벤트 버블링 방지
+
+    // 사용자에게 삭제 확인 요청
+    const isConfirmed = window.confirm(
+      `${name}을(를) 장바구니에서 삭제하시겠습니까?`
+    );
+
+    // 사용자가 '취소'를 클릭한 경우, 함수 실행 중지
+    if (!isConfirmed) {
+      return;
+    }
+
+    // plantId를 사용하여 해당 아이템을 장바구니 배열에서 제거
+    const updatedCart = cart.filter((item) => item.plantId !== plantId);
+
+    // 변경된 장바구니 배열을 로컬 스토리지에 저장
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+
+    // 상태를 업데이트하여 UI를 새로고침
+    setCart(updatedCart);
+  };
+
+  // 식물 카드 클릭 핸들러
+  const handlePlantClick = (plantId) => {
+    navigate(`/card_detail/${plantId}`); // 식물 상세 페이지로 이동
   };
 
   return (
@@ -136,22 +165,34 @@ export default function Mypage() {
               <span></span>
             </div>
             <div className="mypage_cart_wrap">
-              {cart.map((item) => (
-                <div className="mypage_cart_inner">
-                  <img
-                    className="mypage_cart_img mypage_cart_img"
-                    src={item.image}
-                    alt={item.name}
-                  />
-                  <div className="mypage_cart_name" key={item.plantId}>
-                    {item.name}
-                  </div>
-                  <div className="mypage_cart_feature">
-                    <p>#{item.type}</p> <p>#{item.level}</p>
-                  </div>
-                  <button className="mypage_cart_delete_button">x</button>
-                </div> // 장바구니 아이템 출력
-              ))}
+              <div className="mypage_cart_inner">
+                {cart.map((item) => (
+                  <div
+                    className="mypage_cart_card_wrap"
+                    onClick={() => handlePlantClick(item.plantId)} // 수정된 부분
+                  >
+                    <img
+                      className="mypage_cart_img mypage_cart_img"
+                      src={item.image}
+                      alt={item.name}
+                    />
+                    <div className="mypage_cart_name" key={item.plantId}>
+                      {item.name}
+                    </div>
+                    <div className="mypage_cart_feature">
+                      <p>#{item.type}</p> <p>#{item.level}</p>
+                    </div>
+                    <button
+                      className="mypage_cart_delete_button"
+                      onClick={(event) =>
+                        removeFromCart(event, item.plantId, item.name)
+                      }
+                    >
+                      x
+                    </button>
+                  </div> // 장바구니 아이템 출력
+                ))}
+              </div>
             </div>
             {/* 기타 사용자 정보 출력 */}
           </div>
