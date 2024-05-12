@@ -1,4 +1,3 @@
-// SearchInput.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -6,7 +5,7 @@ import "../styles/Search_input.css";
 
 function SearchInput({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState("");
-  const navigate = useNavigate(); // useHistory 훅 사용
+  const navigate = useNavigate(); 
 
   const handleSearchSubmit = async (event) => {
     event.preventDefault();
@@ -17,7 +16,6 @@ function SearchInput({ onSearch }) {
     }
 
     if (onSearch) {
-      // onSearch prop이 제공된 경우, 같은 페이지에서 결과를 처리
       try {
         const response = await axios.get(
           `https://api.example.com/plants?query=${searchTerm}`
@@ -32,7 +30,6 @@ function SearchInput({ onSearch }) {
         console.error("식물 검색 중 오류가 발생했습니다.", error);
       }
     } else {
-      // onSearch prop이 제공되지 않은 경우, 다른 페이지로 넘어가면서 결과 전달
       try {
         const response = await axios.get(
           `https://api.example.com/plants?query=${searchTerm}`
@@ -41,7 +38,6 @@ function SearchInput({ onSearch }) {
         const filteredPlants = response.data.plants.filter(
           (plant) => plant.name === searchTerm
         );
-        // 검색 결과 페이지로 이동
         navigate("/search_result", {
           state: { plants: filteredPlants, searchTerm: searchTerm },
         });

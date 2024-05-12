@@ -9,7 +9,6 @@ import SearchInput from "../components/Search_input";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-// Swiper React components와 필요한 모듈을 직접 가져옵니다.
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
@@ -22,7 +21,6 @@ export default function Main() {
 
 
   useEffect(() => {
-    // ScrollTrigger를 사용한 애니메이션 설정
     gsap.to(".main_back_img_leaf00, .main_back_img_leaf07", {
       scrollTrigger: {
         trigger: ".main_recommend_plant_section",
@@ -32,7 +30,7 @@ export default function Main() {
         markers: false,
       },
       x: "-330px",
-      ease: "power1.inOut", // 애니메이션 효과 조절
+      ease: "power1.inOut", 
     });
 
     gsap.to(".main_back_img_leaf01", {
@@ -43,9 +41,9 @@ export default function Main() {
         scrub: true,
         markers: false,
       },
-      x: -400, // 오른쪽으로 이동할 거리(px 단위)
-      y: 400, // 아래쪽으로 이동할 거리(px 단위)
-      ease: "power1.inOut", // 애니메이션 효과 조절
+      x: -400, 
+      y: 400, 
+      ease: "power1.inOut",
     });
 
     gsap.to(
@@ -58,8 +56,8 @@ export default function Main() {
           scrub: true,
           markers: false,
         },
-        y: 400, // 아래쪽으로 이동할 거리(px 단위)
-        ease: "power1.inOut", // 애니메이션 효과 조절
+        y: 400, 
+        ease: "power1.inOut", 
       }
     );
 
@@ -71,9 +69,9 @@ export default function Main() {
         scrub: true,
         markers: false,
       },
-      x: 400, // 오른쪽으로 이동할 거리(px 단위)
-      y: 400, // 아래쪽으로 이동할 거리(px 단위)
-      ease: "power1.inOut", // 애니메이션 효과 조절
+      x: 400, 
+      y: 400, 
+      ease: "power1.inOut", 
     });
     gsap.to(".main_back_img_leaf06", {
       scrollTrigger: {
@@ -83,8 +81,8 @@ export default function Main() {
         scrub: true,
         markers: false,
       },
-      x: 400, // 아래쪽으로 이동할 거리(px 단위)
-      ease: "power1.inOut", // 애니메이션 효과 조절
+      x: 400,
+      ease: "power1.inOut",
     });
 
     gsap.to(".main_recommend_plant_center", {
@@ -98,25 +96,16 @@ export default function Main() {
       opacity: 0,
     });
 
-
-
-    // // 컴포넌트 언마운트 시 ScrollTrigger 인스턴스 제거
-    // return () => {
-    //   ScrollTrigger.getAll().forEach((instance) => instance.kill());
-    // };
-  }, []); // 빈 의존성 배열을 전달하여 컴포넌트가 마운트될 때 한 번만 실행되도록 합니다.
+  }, []); 
 
   const [plants, setPlants] = useState([]);
 
   useEffect(() => {
     fetch("https://api.example.com/plants")
       .then((response) => response.json())
-      .then((data) => setPlants(data.plants)) // 예제에서는 data.plants, 실제 구조에 따라 수정 필요
+      .then((data) => setPlants(data.plants)) 
       .catch((error) => console.error(error));
   }, []);
-
-
-
 
 
   return (
@@ -217,22 +206,20 @@ export default function Main() {
               <Swiper
                 className="main_search_plant_swiper"
                 modules={[Autoplay, Pagination, Navigation]}
-                direction={"horizontal"} // or "horizontal"
+                direction={"horizontal"} 
                 loop={true}
                 speed={600}
                 spaceBetween={30}
                 breakpoints={{
-                  // 640px 이상일 때
                   300: {
                     slidesPerView: 3,
                   },
-                  // 1024px 이상일 때
                   1024: {
                     slidesPerView: 4,
                   },
                 }}
-                simulateTouch={true} // 마우스로 드래그 가능하게 설정
-                grabCursor={true} // 마우스 커서 변경 설정
+                simulateTouch={true} 
+                grabCursor={true} 
                 centeredSlides={false}
                 scrollbar={{ draggable: true }}
                 autoplay={{

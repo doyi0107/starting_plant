@@ -6,9 +6,8 @@ import { Link } from "react-router-dom";
 import GoogleLoginForm from "./Google_login";
 
 export default function Header() {
-  // seaarch기능
   const [searchTerm, setSearchTerm] = useState("");
-  const navigate = useNavigate(); // useHistory 훅 사용
+  const navigate = useNavigate(); 
 
   const handleSearchSubmit = async (event) => {
     event.preventDefault();
@@ -25,7 +24,6 @@ export default function Header() {
       const filteredPlants = response.data.plants.filter(
         (plant) => plant.name === searchTerm
       );
-      // 검색 결과 페이지로 이동
       navigate("/search_result", {
         state: { plants: filteredPlants, searchTerm: searchTerm },
       });
@@ -35,11 +33,9 @@ export default function Header() {
     }
   };
 
-  // 스크롤 위치를 저장하기 위한 상태
   const [lastScrollPosition, setLastScrollPosition] = useState(0);
   const [isClosed, setIsClosed] = useState(false);
 
-  // 스크롤 이벤트 핸들러
   const handleScroll = () => {
     const currentScrollPosition = window.scrollY;
 
@@ -48,7 +44,6 @@ export default function Header() {
     } else {
       setIsClosed(true);
     }
-    // 마지막 스크롤 위치를 업데이트합니다.
     setLastScrollPosition(currentScrollPosition);
   };
 
@@ -57,7 +52,7 @@ export default function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollPosition]); // lastScrollPosition이 변경될 때마다 이펙트를 다시 실행합니다.
+  }, [lastScrollPosition]); 
 
   return (
     <div>
@@ -79,7 +74,6 @@ export default function Header() {
               STARTING PLANT
             </Link>
           </div>
-          {/* <p className="header_main">식물 추천</p> */}
 
           <GoogleLoginForm style={{ width: "200px", height: "40px" }} />
         </div>

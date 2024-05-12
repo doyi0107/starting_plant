@@ -1,4 +1,3 @@
-// src/Survey.js
 import React, { useState } from "react";
 import "../../styles/Survey.css";
 import Step1Level from "./Step1_level";
@@ -25,13 +24,12 @@ function Survey() {
     setStep(step + 1);
   };
 
-  // "이전 단계" 버튼을 위한 함수
   const prevStep = () => {
     if (step > 1) {
       setStep(step - 1);
     }
   };
-  // 사용자 데이터 업데이트 함수
+  
   const updateUserData = (key, value) => {
     setUserData({ ...userData, [key]: value });
   };

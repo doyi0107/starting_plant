@@ -4,21 +4,18 @@ import { useNavigate } from "react-router-dom";
 import "../styles/Search_result.css";
 import SearchInput from "../components/Search_input";
 import { useRecoilState } from "recoil";
-import { cartState } from "../components/atoms"; // 상태를 import
-import useAddToCart from "../components/UseAddToCart"; // 커스텀 훅 import
+import { cartState } from "../components/atoms";
+import useAddToCart from "../components/UseAddToCart"; 
 
 function Search_result() {
   const location = useLocation();
   const navigate = useNavigate();
-  // 로컬 상태로 검색 결과와 검색어 관리
   const [plants, setPlants] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [cart, setCart] = useRecoilState(cartState); // Recoil 상태 사용
-  const addToCart = useAddToCart(); // 커스텀 훅 사용
+  const [cart, setCart] = useRecoilState(cartState); 
+  const addToCart = useAddToCart(); 
 
-  // location의 상태가 변경될 때마다 실행되는 useEffect
   useEffect(() => {
-    // location.state에서 검색 결과와 검색어를 가져옴
     const { plants: newPlants, searchTerm: newSearchTerm } = location.state || {
       plants: [],
       searchTerm: "",
@@ -26,9 +23,8 @@ function Search_result() {
 
     setPlants(newPlants);
     setSearchTerm(newSearchTerm);
-  }, [location.state]); // location.state가 변경될 때마다 useEffect 실행
+  }, [location.state]); 
 
-  // 카드 클릭 핸들러 함수
   const handleCardClick = (plantName) => {
     navigate(`/card_detail/${plantName}`);
   };
@@ -45,9 +41,8 @@ function Search_result() {
             </div>
             <SearchInput
               onSearch={(data, newSearchTerm) => {
-                // newSearchTerm 인자 추가
                 setPlants(data);
-                setSearchTerm(newSearchTerm); // 새로운 검색어로 상태 업데이트
+                setSearchTerm(newSearchTerm); 
               }}
             />
           </div>

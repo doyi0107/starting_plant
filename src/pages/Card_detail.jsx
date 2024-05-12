@@ -1,23 +1,20 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../styles/Card_detail.css";
-import useAddToCart from "../components/UseAddToCart"; // 커스텀 훅 import
+import useAddToCart from "../components/UseAddToCart"; 
 import { useRecoilState } from "recoil";
-import { cartState } from "../components/atoms"; // 상태를 import
+import { cartState } from "../components/atoms"; 
 
 function CardDetail() {
   let { plantId } = useParams();
 
-  // 식물 정보 상태
   const [plant, setPlant] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const addToCart = useAddToCart(); // 커스텀 훅 사용
-  const [cart, setCart] = useRecoilState(cartState); // Recoil 상태 사용
+  const addToCart = useAddToCart(); 
+  const [cart, setCart] = useRecoilState(cartState); 
 
-  // 식물 데이터를 가져오는 함수
   useEffect(() => {
-    // 가상의 API URL. 실제 URL로 대체 필요
     const url = `https://api.example.com/plants?plantId=${plantId}`;
 
     fetch(url)
@@ -37,12 +34,10 @@ function CardDetail() {
         setError(error);
         setIsLoading(false);
       });
-  }, [plantId]); // plantId이 변경될 때마다 이 effect를 다시 실행
+  }, [plantId]); 
 
-  // 로딩 중 메시지
   if (isLoading) return <div className="card_detail_wrap">로딩 중...</div>;
 
-  // 에러 메시지
   if (error)
     return (
       <div className="card_detail_wrap">
@@ -50,7 +45,6 @@ function CardDetail() {
       </div>
     );
 
-  // 식물 정보 렌더링
   return (
     <div className="card_detail_wrap">
       <div className="card_detail">
