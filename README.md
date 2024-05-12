@@ -38,19 +38,24 @@
 
 ## 📌시연영상 
  1. **사용자 맞춤 식물 추천** 
- <p align="center">
-  <img src="https://github.com/doyi0107/starting_plant/assets/93458143/bec55871-f40b-4f0f-814f-0420b6f19df1">
+<p align="left">
+  <img src="https://github.com/doyi0107/starting_plant/assets/93458143/bec55871-f40b-4f0f-814f-0420b6f19df1" width="700" height="400">
 </p>
- 2. **식물 검색 및 정보 제공**
-<p align="center">
-  <img src="https://github.com/doyi0107/starting_plant/assets/93458143/bec55871-f40b-4f0f-814f-0420b6f19df1">
-</p>
- 3. **소셜로그인 및 마이페이지 생성**
-<p align="center">
-  <img src="https://github.com/doyi0107/starting_plant/assets/93458143/bec55871-f40b-4f0f-814f-0420b6f19df1">
-</p>
- 4. 장바구니 기능
 
+ 2. **식물 검색 및 정보 제공**
+<p align="left">
+  <img src="https://github.com/doyi0107/starting_plant/assets/93458143/6914abb6-3738-4508-85bc-26da6c59773a" width="700" height="400">
+</p>
+
+ 3. **소셜로그인 및 마이페이지 생성**
+<p align="left">
+  <img src="https://github.com/doyi0107/starting_plant/assets/93458143/da457bdc-e705-431d-b26e-05134de6efb5" width="700" height="400">
+</p>
+
+ 4. 장바구니 기능
+<p align="left">
+  <img src="https://github.com/doyi0107/starting_plant/assets/93458143/82bdb5b6-72d0-44ed-ad50-1fc53f0932be" width="700" height="400">
+</p>
 
 ## 회고록 보러가기 
  <a href="https://2-doooo-2.tistory.com/170">
