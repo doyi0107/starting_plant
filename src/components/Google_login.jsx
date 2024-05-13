@@ -12,7 +12,6 @@ const GoogleLoginButton = () => {
 
   const signIn = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
-      console.log("tokenResponse", tokenResponse);
       const userInfo = await axios
         .get("https://www.googleapis.com/oauth2/v3/userinfo", {
           headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
@@ -54,11 +53,15 @@ const GoogleLoginButton = () => {
             로그아웃
           </p>
           <span>|</span>
-          <img src={userName} className="google_login_after_name"></img>
+          <img
+            src={userName}
+            className="google_login_after_name"
+            alt="google_login_after_img"
+          ></img>
         </div>
       ) : (
-        <div className="googlg_login_before_wrap" onClick={() => signIn()}>
-          <p className="googlg_login_text">로그인</p>
+        <div className="google_login_before_wrap" onClick={() => signIn()}>
+          <p className="google_login_text">로그인</p>
           <img
             src="assets/header/login_logo.png"
             alt="Login with Google"

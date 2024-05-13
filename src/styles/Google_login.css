@@ -1,4 +1,4 @@
-.googlg_login_before_wrap {
+.google_login_before_wrap {
     display: flex;
     width: 130px;
     height: 40px;
@@ -8,11 +8,11 @@
     border-radius: 20px;
 }
 
-.googlg_login_before_wrap:hover {
+.google_login_before_wrap:hover {
     cursor: pointer;
 }
 
-.googlg_login_text {
+.google_login_text {
     font: 500 1.1rem "Titillium Web", sans-serif;
     color: #8d9b6c;
 }
@@ -50,7 +50,7 @@
 
 @media screen and (max-width: 500px) {
 
-    .googlg_login_text {
+    .google_login_text {
         font: 500 1rem "Titillium Web", sans-serif;
     }
 
