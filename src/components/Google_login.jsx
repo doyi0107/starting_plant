@@ -36,6 +36,7 @@ const GoogleLoginButton = () => {
     googleLogout();
     localStorage.removeItem("currentUser");
     navigate("/");
+    setCurrentUser(null); // 현재 사용자 상태를 null로 설정
   };
 
   const userName =

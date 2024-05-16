@@ -99,7 +99,7 @@ export default function Mypage() {
               onChange={handlePhotoChange}
               accept="image/*"
               className="mypage_profile_input"
-              style={{ display: "none" }} 
+              style={{ display: "none" }}
             />
           </label>
           {photo && (
@@ -154,32 +154,40 @@ export default function Mypage() {
             </div>
             <div className="mypage_cart_wrap">
               <div className="mypage_cart_inner">
-                {cart.map((item) => (
-                  <div
-                    className="mypage_cart_card_wrap"
-                    onClick={() => handlePlantClick(item.plantId)} 
-                  >
-                    <img
-                      className="mypage_cart_img mypage_cart_img"
-                      src={item.image}
-                      alt={item.name}
-                    />
-                    <div className="mypage_cart_name" key={item.plantId}>
-                      {item.name}
+                {cart.length === 0 ? (
+                  <div className="mypage_cart_empty_msg_wrap">
+                    <div className="mypage_cart_empty_msg">
+                      장바구니가 비어있습니다.
                     </div>
-                    <div className="mypage_cart_feature">
-                      <p>#{item.type}</p> <p>#{item.level}</p>
-                    </div>
-                    <button
-                      className="mypage_cart_delete_button"
-                      onClick={(event) =>
-                        removeFromCart(event, item.plantId, item.name)
-                      }
+                  </div>
+                ) : (
+                  cart.map((item) => (
+                    <div
+                      className="mypage_cart_card_wrap"
+                      onClick={() => handlePlantClick(item.plantId)}
                     >
-                      x
-                    </button>
-                  </div> 
-                ))}
+                      <img
+                        className="mypage_cart_img mypage_cart_img"
+                        src={item.image}
+                        alt={item.name}
+                      />
+                      <div className="mypage_cart_name" key={item.plantId}>
+                        {item.name}
+                      </div>
+                      <div className="mypage_cart_feature">
+                        <p>#{item.type}</p> <p>#{item.level}</p>
+                      </div>
+                      <button
+                        className="mypage_cart_delete_button"
+                        onClick={(event) =>
+                          removeFromCart(event, item.plantId, item.name)
+                        }
+                      >
+                        x
+                      </button>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
             {/* 기타 사용자 정보 출력 */}

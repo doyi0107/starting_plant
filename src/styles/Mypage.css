@@ -161,12 +161,27 @@
     gap: 50px 30px;
 }
 
+/* 장바구니 비었을 때 */
+.mypage_cart_empty_msg_wrap {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mypage_cart_empty_msg {
+    text-align: center;
+    color: #000 !important;
+    font: 400 1rem "Titillium Web", sans-serif !important;
+}
+
+
+/* 장바구니 카드 존재할 때 */
 .mypage_cart_card_wrap {
     width: 100%;
     height: 250px;
     background-color: #afbd87;
     border-radius: 15px;
-    box-shadow: 3px 3px 3px 3px #9ba777;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -188,8 +203,9 @@
     margin: 5px 0px;
     color: #e6ecd9;
     font: bold 1.2em "Titillium Web", sans-serif;
-
 }
+
+
 
 .mypage_cart_feature {
     width: 160px;

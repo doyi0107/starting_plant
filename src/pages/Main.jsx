@@ -30,7 +30,7 @@ export default function Main() {
         markers: false,
       },
       x: "-330px",
-      ease: "power1.inOut", 
+      ease: "power1.inOut",
     });
 
     gsap.to(".main_back_img_leaf01", {
@@ -41,8 +41,8 @@ export default function Main() {
         scrub: true,
         markers: false,
       },
-      x: -400, 
-      y: 400, 
+      x: -400,
+      y: 400,
       ease: "power1.inOut",
     });
 
@@ -56,8 +56,8 @@ export default function Main() {
           scrub: true,
           markers: false,
         },
-        y: 400, 
-        ease: "power1.inOut", 
+        y: 400,
+        ease: "power1.inOut",
       }
     );
 
@@ -69,9 +69,9 @@ export default function Main() {
         scrub: true,
         markers: false,
       },
-      x: 400, 
-      y: 400, 
-      ease: "power1.inOut", 
+      x: 400,
+      y: 400,
+      ease: "power1.inOut",
     });
     gsap.to(".main_back_img_leaf06", {
       scrollTrigger: {
@@ -95,6 +95,7 @@ export default function Main() {
       },
       opacity: 0,
     });
+
 
   }, []); 
 

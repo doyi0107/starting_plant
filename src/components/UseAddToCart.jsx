@@ -18,9 +18,11 @@ const useAddToCart = () => {
       return;
     }
 
-        const newItem = { plantId, name, image, type, level };
-        setCart([...cart, newItem]);
-        window.confirm(`장바구니에 ${name}을 담겠습니까?`);
+   const newItem = { plantId, name, image, type, level };
+   const updatedCart = [...cart, newItem];
+   setCart(updatedCart);
+   localStorage.setItem("cart", JSON.stringify(updatedCart)); 
+   window.confirm(`장바구니에 ${name}을 담겠습니까?`);
   };
 
   return handleAddToCart;
