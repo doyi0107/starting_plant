@@ -17,12 +17,5 @@ connection.connect((err) => {
   });
 
 
-connection.query('SELECT * FROM plants WHERE plants_id = 1', function(err, results) {
-  //console.log(results); // 결과 출력
-  //res.send(results);
-//console.log(fields); // 결과의 메타데이터 출력
-});
-// 연결 종료
-
 
 module.exports = connection;
