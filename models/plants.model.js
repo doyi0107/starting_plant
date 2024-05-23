@@ -25,5 +25,15 @@ Plant.info = (plants_id, result) => {
         result(null, res);
     })
 }
+Plant.allPlant = (data, result) => {
+    sql.query('SELECT * FROM plants ', (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+            return;
+        }
+        result(null, res);
+    })
+}
 
 module.exports = Plant;
