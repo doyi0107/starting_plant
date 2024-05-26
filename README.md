@@ -52,7 +52,7 @@
   <img src="https://github.com/doyi0107/starting_plant/assets/93458143/da457bdc-e705-431d-b26e-05134de6efb5" width="700" height="400">
 </p>
 
- 4. 장바구니 기능
+ 4. **장바구니 기능**
 <p align="left">
   <img src="https://github.com/doyi0107/starting_plant/assets/93458143/82bdb5b6-72d0-44ed-ad50-1fc53f0932be" width="700" height="400">
 </p>
