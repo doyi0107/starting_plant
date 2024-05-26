@@ -15,7 +15,9 @@ function CardDetail() {
   const [cart, setCart] = useRecoilState(cartState); 
 
   useEffect(() => {
-    const url = `https://api.example.com/plants?plantId=${plantId}`;
+     const url = `https://api.example.com/plants?plantId=${plantId}`;
+    // 실제 백엔드 연동 코드
+    // const url = `http://39.125.37.13:5000/plant/info/${plantId}`;
 
     fetch(url)
       .then((response) => {
@@ -29,6 +31,16 @@ function CardDetail() {
         console.log(data);
         setIsLoading(false);
       })
+      // 실제 백엔드 연동 코드
+      // .then((data) => {
+      //      if (data && data.length > 0) {
+      //        setPlant(data[0]);
+      //      } else {
+      //        setPlant(null);
+      //      }
+      //      console.log("카드 디테일 데이터", data);
+      //      setIsLoading(false);
+      // })
       .catch((error) => {
         console.error("Fetching error:", error);
         setError(error);
@@ -72,7 +84,7 @@ function CardDetail() {
                         onClick={(e) => {
                           e.stopPropagation();
                           addToCart(
-                            plant.id,
+                            plant.plants_id,
                             plant.name,
                             plant.imgUrl,
                             plant.type,

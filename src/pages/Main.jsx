@@ -101,12 +101,24 @@ export default function Main() {
 
   const [plants, setPlants] = useState([]);
 
-  useEffect(() => {
+    useEffect(() => {
     fetch("https://api.example.com/plants")
       .then((response) => response.json())
       .then((data) => setPlants(data.plants)) 
       .catch((error) => console.error(error));
   }, []);
+
+  //실제 백엔드 연동 코드 
+  // useEffect(() => {
+  //   fetch("http://39.125.37.13:5000/plant/info")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setPlants(data);
+  //     })
+  //     .catch((error) => console.error(error));
+      
+  // }, []);
+
 
 
   return (
@@ -207,7 +219,7 @@ export default function Main() {
               <Swiper
                 className="main_search_plant_swiper"
                 modules={[Autoplay, Pagination, Navigation]}
-                direction={"horizontal"} 
+                direction={"horizontal"}
                 loop={true}
                 speed={600}
                 spaceBetween={30}
@@ -219,8 +231,8 @@ export default function Main() {
                     slidesPerView: 4,
                   },
                 }}
-                simulateTouch={true} 
-                grabCursor={true} 
+                simulateTouch={true}
+                grabCursor={true}
                 centeredSlides={false}
                 scrollbar={{ draggable: true }}
                 autoplay={{
@@ -228,17 +240,22 @@ export default function Main() {
                   disableOnInteraction: false,
                 }}
               >
-                {plants.map((plant, index) => (
-                  <SwiperSlide key={index}>
-                    <PlantCard
-                      name={plant.name}
-                      image={plant.imgUrl}
-                      type={plant.type}
-                      level={plant.level}
-                      plantId={plant.id}
-                    />
-                  </SwiperSlide>
-                ))}
+                {plants.map((plant, index) => {
+                  console.log(plant);
+                  return (
+                    <SwiperSlide key={index}>
+                      <PlantCard
+                        name={plant.name}
+                        image={plant.imgUrl}
+                        type={plant.type}
+                        level={plant.level}
+                        plantId={plant.id}
+                        // 실제 백엔드 연동 코드
+                        // plantId={plant.plants_id}
+                      />
+                    </SwiperSlide>
+                  );
+                })}
               </Swiper>
             </div>
           </div>

@@ -29,6 +29,8 @@ export default function Survey_result({
           ...(userData.height && { height: userData.height }),
         }).toString();
         const apiUrl = `https://api.example.com/plants?${queryParams}`;
+        // 실제 백엔드 연동 코드
+        // const apiUrl = `http://39.125.37.13:5000/plant/reco/?${queryParams}`;
 
         const response = await fetch(apiUrl);
         if (!response.ok) {
@@ -36,8 +38,9 @@ export default function Survey_result({
         }
 
         const data = await response.json();
-        console.log(data);
         setRecommendedPlants(data.plants);
+        // 실제 백엔드 연동 코드
+        // setRecommendedPlants(data);
       } catch (error) {
         console.error("데이터를 불러오는데 실패했습니다.", error);
         setRecommendedPlants([]);
@@ -82,13 +85,14 @@ export default function Survey_result({
                   <img
                     onClick={(e) => {
                       e.stopPropagation();
-                     addToCart(
-                       plant.id,
-                       plant.name,
-                       plant.imgUrl,
-                       plant.type,
-                       plant.level
-                     );
+                      addToCart(
+                        plant.id,
+                        // plant.plants_id,
+                        plant.name,
+                        plant.imgUrl,
+                        plant.type,
+                        plant.level
+                      );
                     }}
                     className="main_search_plant_cart_img"
                     src="assets/Card/card_shopping_cart.png"

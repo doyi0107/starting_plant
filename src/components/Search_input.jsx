@@ -5,7 +5,7 @@ import "../styles/Search_input.css";
 
 function SearchInput({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState("");
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleSearchSubmit = async (event) => {
     event.preventDefault();
@@ -18,10 +18,18 @@ function SearchInput({ onSearch }) {
     if (onSearch) {
       try {
         const response = await axios.get(
-          `https://api.example.com/plants?query=${searchTerm}`
+          // `https://api.example.com/plants?query=${searchTerm}`
+
+          //실제 백엔드 연동 코드
+          `http://39.125.37.13:5000/plant/search?query=${searchTerm}`
         );
 
-        const filteredPlants = response.data.plants.filter(
+        // const filteredPlants = response.data.plants.filter(
+        //   (plant) => plant.name === searchTerm
+        // );
+
+        //실제 백엔드 연동 코드
+        const filteredPlants = response.data.filter(
           (plant) => plant.name === searchTerm
         );
         onSearch(filteredPlants, searchTerm);
@@ -33,11 +41,19 @@ function SearchInput({ onSearch }) {
       try {
         const response = await axios.get(
           `https://api.example.com/plants?query=${searchTerm}`
+          
+          //실제 백엔드 연동 코드
+          // `http://39.125.37.13:5000/plant/search?query=${searchTerm}`
         );
 
         const filteredPlants = response.data.plants.filter(
           (plant) => plant.name === searchTerm
         );
+
+        //실제 백엔드 연동 코드
+        // const filteredPlants = response.data.filter(
+        //   (plant) => plant.name === searchTerm
+        // );
         navigate("/search_result", {
           state: { plants: filteredPlants, searchTerm: searchTerm },
         });
