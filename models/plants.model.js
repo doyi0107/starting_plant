@@ -36,7 +36,6 @@ Plant.allPlant = (data, result) => {
     })
 }
 Plant.reco = (req, result) => {
-    console.log(req.level)
     let price, life, height = 0;
     if(req.price=="1_won")
     {   
