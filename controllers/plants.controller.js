@@ -26,3 +26,16 @@ exports.allPlant = (req, res) => {
         }
     });
 };
+
+exports.reco = (req, res) => {
+    Plant.reco(req.query, (err, data) => {
+        if (err)
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while retrieving users."
+            });
+        else {
+            res.send(data);
+        }
+    });
+};
