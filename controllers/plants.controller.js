@@ -38,4 +38,18 @@ exports.reco = (req, res) => {
             res.send(data);
         }
     });
+
+};
+exports.search = (req, res) => {
+    Plant.search(req.query, (err, data) => {
+        if (err)
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while retrieving users."
+            });
+        else {
+            res.send(data);
+        }
+    });
+    
 };
