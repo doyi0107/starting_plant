@@ -139,6 +139,18 @@ Plant.reco = (req, result) => {
     }
     
 }
+Plant.search = (req, result) => {
+    let name = req.query
+    console.log(name)
+    sql.query('SELECT * FROM plants WHERE name = ?', [name], (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+            return;
+        }
+        result(null, res);
+    })
+}
 module.exports = Plant;
 //level type place price life height
 
